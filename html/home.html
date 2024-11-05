@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento - Pousada Quinta do Ypuã</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Ícones do Font Awesome -->
+</head>
+<body>
+
+    <!-- Barra Lateral de Navegação -->
+    <aside class="sidebar">
+        <div class="logo">Pousada <span>Quinta do Ypuã</span></div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="/html/gerenciamento_reserva.html"><i class="fas fa-calendar-check"></i> Gerenciamento de Reservas</a></li>
+                <li><a href="/html/gerenciamento_hospedes.html"><i class="fas fa-bed"></i> Gerenciamento de Hóspedes</a></li>
+                <li><a href="gerenciamento_funcionarios.html"><i class="fas fa-users"></i> Funcionários</a></li>
+                <li><a href="/html/agenda_geral.html"><i class="fas fa-calendar-alt"></i> Agenda Geral</a></li>
+                <li><a href="/html/area_finan_funcionario.html"><i class="fas fa-chart-line">Area Financeiro Funcionário</a></li>
+                <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Bem-vindo ao Sistema de Gerenciamento</h1>
+            <p>Use o menu lateral para navegar pelas funcionalidades do sistema.</p>
+        </header>
+
+        <!-- Painel de Resumo -->
+        <section class="dashboard">
+            <div class="dashboard-item">
+                <h2>Reservas Atuais</h2>
+                <p>Total: 12 reservas</p>
+                <a href="gerenciamento_reservas.html" class="btn-details">Ver detalhes</a>
+            </div>
+            <div class="dashboard-item">
+                <h2>Acomodações Disponíveis</h2>
+                <p>Total: 5 acomodações</p>
+                <a href="gerenciamento_acomodacoes.html" class="btn-details">Ver detalhes</a>
+            </div>
+            <div class="dashboard-item">
+                <h2>Próximos Eventos</h2>
+                <p>Confira a agenda de atividades e eventos.</p>
+                <a href="agenda_geral.html" class="btn-details">Ver agenda</a>
+            </div>
+        </section>
+    </main>

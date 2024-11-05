@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pousada Quinta do Ypuã</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Logotipo e Nome do Sistema -->
+        <div class="login-header">
+            <img src="/images/logo-pousada-quinta-do-ypua.webp" alt="Logotipo da Pousada" class="logo">
+            <h1>Sistema de Gerenciamento - Pousada Quinta do Ypuã</h1>
+        </div>
+
+        <!-- Formulário de Login -->
+        <form action="autenticar.php" method="POST" class="login-form">
+            <!-- Campo de Nome de Usuário ou Email -->
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required placeholder="Digite seu usuário ou email">
+
+            <!-- Campo de Senha -->
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+
+            <!-- Opção Lembrar-me e Link de Recuperação -->
+            <div class="form-options">
+                <label>
+                    <input type="checkbox" name="remember"> Lembrar-me
+                </label>
+                <a href="recuperar_senha.html">Esqueci minha senha</a>
+            </div>
+
+            <!-- Botão de Login -->
+            <button type="submit" class="login-button">Entrar</button>
+            
+            <!-- Mensagem de Erro (oculta por padrão) -->
+            <p class="error-message" style="display: none;">Usuário ou senha incorretos</p>
+        </form>
+
+        <!-- Rodapé -->
+        <footer class="login-footer">
+            <p>Suporte: <a href="mailto:suporte@pousada.com">suporte@pousada.com</a></p>
+            <p>Versão 1.0.0</p>
+        </footer>
+    </div>
+
+</body>
+</html>
