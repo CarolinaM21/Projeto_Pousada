@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Reservas</title>
+    <link rel="stylesheet" href="/css/gerenciamento_reseva.css">
+    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+
+</head>
+<body>
+    <div class="sidebar">
+        <button class="sidebar-btn">Admin</button>
+        <button class="sidebar-btn active">
+            <img src="calendar-icon.png" alt="Calendário">
+        </button>
+        <!-- Adicione mais botões conforme necessário -->
+    </div>
+    <div class="container">
+        <header>
+            <h1>Gerencimento de Reservas</h1>
+            <input type="text" placeholder="Essa semana" class="search-input">
+            <button class="control-panel-btn">Painel de controle</button>
+        </header>
+
+        <div class="reservations">
+            <div class="reservation-card">
+                <h2>Maria Alice Silva</h2>
+                <p>+2 (adultos)</p>
+                <p>Acomodação: Suítes 1 e 2</p>
+                <p>Período da reserva: <strong>De 27/nov a 30/nov de 2023</strong></p>
+                <p>Situação pagamento: <span class="status pending">Pagamento PENDENTE</span></p>
+            </div>
+            <div class="reservation-card">
+                <h2>Maria Alice Silva</h2>
+                <p>+2 (adultos)</p>
+                <p>Acomodação: Suítes 1 e 2</p>
+                <p>Período da reserva: <strong>De 27/nov a 30/nov de 2023</strong></p>
+                <p>Situação pagamento: <span class="status ok">Pagamento OK</span></p>
+            </div>
+            <div class="reservation-card">
+                <h2>Maria Alice Silva</h2>
+                <p>+2 (adultos)</p>
+                <p>Acomodação: Suítes 1 e 2</p>
+                <p>Período da reserva: <strong>De 27/nov a 30/nov de 2023</strong></p>
+                <p>Situação pagamento: <span class="status pending">Pagamento PENDENTE</span></p>
+            </div>
+        </div>
+
+        <button class="new-reservation-btn">Cadastrar nova reserva</button>
+        <div class="pagination">
+            <p>1 de 3</p>
+            <button>próxima página</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
