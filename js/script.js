@@ -20,3 +20,38 @@ function simulateBooking(event, roomType, price) {
         alert("Por favor, preencha todos os campos.");
     }
 }
+<script>
+function simulateBooking(event, acomodacao, preco) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    // Obtém os elementos do formulário
+    const form = event.target;
+    const checkinDate = new Date(form.checkin.value);
+    const checkoutDate = new Date(form.checkout.value);
+    const adults = form.adults.value;
+
+    // Verifica se as datas são válidas
+    if (isNaN(checkinDate) || isNaN(checkoutDate)) {
+        alert("Por favor, selecione datas válidas.");
+        return;
+    }
+
+    // Calcula a diferença em dias
+    const days = (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24);
+    if (days <= 0) {
+        alert("A data de check-out deve ser após a data de check-in.");
+        return;
+    }
+
+    // Calcula o valor total
+    const dailyRate = parseFloat(preco.replace("R$", "").replace(",", ".")); // Converte o preço para número
+    const total = dailyRate * days;
+
+    // Atualiza o conteúdo da div de resultado abaixo do formulário
+    const resultDiv = form.nextElementSibling; // Seleciona a div booking-result
+    resultDiv.innerHTML = `
+        <h3>Simulação de Reserva para ${acomodacao}</h3>
+        <p>Valor para ${days} dia(s) e ${adults} adulto(s): <strong>R$${total.toFixed(2)}</strong></p>
+    `;
+}
+</script>
