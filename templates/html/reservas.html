@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reservas.css') }}">
+</head>
+<body>
+    <h1>Listagem de Reservas</h1>
+
+    <!-- Botão para adicionar nova reserva -->
+    <a href="{{ url_for('cadastro_reserva') }}" class="button">Adicionar Reserva</a>
+    
+    <!-- Filtros de Busca (Opcional) -->
+    <form method="GET" action="{{ url_for('listar_reservas') }}" class="filter-form">
+        <label for="nome">Nome do Hóspede:</label>
+        <input type="text" id="nome" name="nome">
+        
+        <label for="data_entrada">Data de Entrada:</label>
+        <input type="date" id="data_entrada" name="data_entrada">
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="">Todos</option>
+            <option value="confirmada">Confirmada</option>
+            <option value="cancelada">Cancelada</option>
+            <option value="concluida">Concluída</option>
+        </select>
+        
+        <button type="submit">Filtrar</button>
+    </form>
+    
+    <!-- Tabela de Reservas -->
+    <table>
+        <thead>
+            <tr>
+                <th>Id da Reserva</th>
+                <th>Id do Hóspede</th>
+                <th>Nome do Hóspede</th>
+                <th>Id da Acomodação</th>
+                <th>Data de Entrada</th>
+                <th>Data de Saída</th>
+                <th>Status</th>
+                <th>Valor Total</th>
+                <th>Data da Reserva</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reserva in reservas %}
+            <tr>
+                <td>{{ reserva.id_reserva }}</td>
+                <td>{{ reserva.id_hospede }}</td>
+                <td>{{ reserva.nome_hospede }}</td>
+                <td>{{ reserva.id_acomodacao}}</td>
+                <td>{{ reserva.data_checkin }}</td>
+                <td>{{ reserva.data_checkout }}</td>
+                <td>{{ reserva.status }}</td>
+                <td>{{ reserva.valor_total }}</td>
+                <td>{{ reserva.data_reserva }}</td>
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

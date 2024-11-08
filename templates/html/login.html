@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Pousada Quinta do Ypuã</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/login.css') }}">
-    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
-
+    <!-- Caminho do arquivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <!-- Caminho e sintaxe do favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
 
     <div class="login-container">
         <!-- Logotipo e Nome do Sistema -->
         <div class="login-header">
-            <img src="/images/logo-pousada-quinta-do-ypua.webp" alt="Logotipo da Pousada" class="logo">
+            <img src="{{ url_for('static', filename='images/logo-pousada-quinta-do-ypua.webp') }}" alt="Logotipo da Pousada" class="logo">
             <h1>Sistema de Gerenciamento - Pousada Quinta do Ypuã</h1>
         </div>
 
         <!-- Formulário de Login -->
-        <form action="autenticar.php" method="POST" class="login-form">
+        <!-- Corrigido para enviar para a rota Flask 'login' -->
+        <form action="{{ url_for('login') }}" method="POST" class="login-form">
             <!-- Campo de Nome de Usuário ou Email -->
             <label for="username">Usuário</label>
             <input type="text" id="username" name="username" required placeholder="Digite seu usuário ou email">
@@ -27,19 +29,17 @@
             <label for="password">Senha</label>
             <input type="password" id="password" name="password" required placeholder="Digite sua senha">
 
-            <!-- Opção Lembrar-me e Link de Recuperação -->
-            <div class="form-options">
-                <label>
-                    <input type="checkbox" name="remember"> Lembrar-me
-                </label>
-                <a href="recuperar_senha.html">Esqueci minha senha</a>
-            </div>
-
             <!-- Botão de Login -->
             <button type="submit" class="login-button">Entrar</button>
             
-            <!-- Mensagem de Erro (oculta por padrão) -->
-            <p class="error-message" style="display: none;">Usuário ou senha incorretos</p>
+            <!-- Mensagem de Erro -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="error-message">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         </form>
 
         <!-- Rodapé -->

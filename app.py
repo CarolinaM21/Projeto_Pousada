@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
 
 app = Flask(__name__)
+app.secret_key = 'batata'  # Chave secreta para sessões e mensagens flash
 
 # Função para obter conexão com o banco de dados
 def get_db_connection():
@@ -22,67 +23,84 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Aqui você pode adicionar a lógica de autenticação do usuário
-        # Exemplo simplificado de autenticação:
         username = request.form['username']
         password = request.form['password']
 
-        # Verifica credenciais no banco de dados (exemplo simplificado)
+        # Verifica credenciais no banco de dados
         conn = get_db_connection()
-        user = conn.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password)).fetchone()
+        user = conn.execute('SELECT * FROM usuarios WHERE nome_usuario = ? AND senha = ?', (username, password)).fetchone()
         conn.close()
 
         if user:
-            # Login bem-sucedido, redireciona para a página 'home'
+            # Armazena o usuário na sessão e redireciona para a página 'home'
+            session['username'] = username
             return redirect(url_for('home'))
         else:
-            # Login falhou, redireciona de volta para o login (ou exibe uma mensagem de erro)
-            return render_template('html/login.html', error="Usuário ou senha incorretos.")
-
+            # Mensagem de erro se as credenciais estiverem incorretas
+            flash("Usuário ou senha incorretos.", "error")
+    
+    # Renderiza a página de login para GET ou após tentativa incorreta de login
     return render_template('html/login.html')
 
 # Página inicial de hóspedes (exemplo de redirecionamento após login)
 @app.route('/home')
 def home():
+    if 'username' not in session:
+        return redirect(url_for('login'))
     return render_template('html/home.html')
 
 # Página de listagem de hóspedes
 @app.route('/hospedes')
 def listar_hospedes():
     conn = get_db_connection()
+    hospedes = conn.execute('SELECT * FROM hospedes').fetchall() if conn else []
     if conn:
-        hospedes = conn.execute('SELECT * FROM hospedes').fetchall()
         conn.close()
-    else:
-        hospedes = []  # Caso ocorra um erro de conexão, hospedes será uma lista vazia
     return render_template('html/index.html', hospedes=hospedes)
 
 # Página de cadastro de hóspede - Aceita GET para exibir o formulário e POST para salvar os dados
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
-        # Obtendo dados do formulário
         nome = request.form['nome']
         cpf = request.form['cpf']
         telefone = request.form['telefone']
         email = request.form['email']
         data_nascimento = request.form['data_nascimento']
 
-        # Inserindo dados no banco de dados
         conn = get_db_connection()
         if conn:
             conn.execute('INSERT INTO hospedes (nome, cpf, telefone, email, data_nascimento) VALUES (?, ?, ?, ?, ?)',
                          (nome, cpf, telefone, email, data_nascimento))
             conn.commit()
             conn.close()
-        
-        # Redireciona para a página de listagem de hóspedes
+
         return redirect(url_for('listar_hospedes'))
 
-    # Exibe o formulário de cadastro
     return render_template('html/cadastro_hospede.html')
 
-# Rotas para outras páginas
+# Página de listagem de reservas com nome do hóspede
+@app.route('/reservas')
+def listar_reservas():
+    conn = get_db_connection()
+    reservas = conn.execute('''
+        SELECT 
+            reservas.id_reserva,
+            reservas.id_hospede,
+            reservas.id_acomodacao,
+            reservas.data_checkin,
+            reservas.data_checkout,
+            reservas.status,
+            reservas.valor_total,
+            reservas.data_reserva,
+            hospedes.nome AS nome_hospede
+        FROM reservas
+        JOIN hospedes ON reservas.id_hospede = hospedes.id_hospede
+    ''').fetchall() if conn else []
+    conn.close()
+    return render_template('html/reservas.html', reservas=reservas)
+
+# Rotas para outras páginas com uso de url_for para links de rotas
 @app.route('/acomodacoes')
 def acomodacoes():
     return render_template('html/acomodacoes.html')
@@ -126,6 +144,12 @@ def privacidade():
 @app.route('/servico')
 def servico():
     return render_template('html/serviço.html')
+
+# Página de logout para finalizar a sessão do usuário
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
 
 # Executando o aplicativo
 if __name__ == '__main__':
