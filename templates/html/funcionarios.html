@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funcionários - Sistema de Gerenciamento da Pousada</title>
-    <link rel="stylesheet" href="/css/funcionarios.css">
-    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+    <title>Àrea do Funcionário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/funcionarios.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -30,31 +30,22 @@
                 </tr>
             </thead>
             <tbody>
+                {% for funcionario in funcionarios %}
                 <tr>
-                    <td>Maria Silva</td>
-                    <td>Recepcionista</td>
-                    <td>08:00 - 16:00</td>
-                    <td>Ativo</td>
+                    <td>{{ funcionario.nome }}</td>
+                    <td>{{ funcionario.cargo }}</td>
+                    <td>{{ funcionario.horario_trabalho }}</td>
+                    <td>{{ funcionario.status }}</td>
                     <td>
-                        <button class="btn-edit" onclick="editarFuncionario()"><i class="fas fa-edit"></i></button>
-                        <button class="btn-delete" onclick="excluirFuncionario()"><i class="fas fa-trash"></i></button>
+                        <button class="btn-edit" onclick="editarFuncionario({{ funcionario.id_funcionario }})"><i class="fas fa-edit"></i></button>
+                        <button class="btn-delete" onclick="excluirFuncionario({{ funcionario.id_funcionario }})"><i class="fas fa-trash"></i></button>
                     </td>
                 </tr>
-                <tr>
-                    <td>João Pereira</td>
-                    <td>Camareiro</td>
-                    <td>09:00 - 17:00</td>
-                    <td>Ativo</td>
-                    <td>
-                        <button class="btn-edit" onclick="editarFuncionario()"><i class="fas fa-edit"></i></button>
-                        <button class="btn-delete" onclick="excluirFuncionario()"><i class="fas fa-trash"></i></button>
-                    </td>
-                </tr>
-                <!-- Adicione mais funcionários conforme necessário -->
+                {% endfor %}
             </tbody>
         </table>
     </div>
 
-    <script src="/js/funcionarios.js"></script>
+    <script src="{{ url_for('static', filename='js/funcionarios.js') }}"></script>
 </body>
 </html>

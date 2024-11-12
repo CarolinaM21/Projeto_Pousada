@@ -100,6 +100,13 @@ def listar_reservas():
     conn.close()
     return render_template('html/reservas.html', reservas=reservas)
 
+@app.route('/funcionarios')
+def funcionarios():
+    conn = get_db_connection()
+    funcionarios = conn.execute('SELECT * FROM funcionarios').fetchall() if conn else []
+    conn.close()
+    return render_template('html/funcionarios.html', funcionarios=funcionarios)
+
 # Rotas para outras páginas com uso de url_for para links de rotas
 @app.route('/acomodacoes')
 def acomodacoes():
@@ -125,9 +132,6 @@ def area_financeira_funcionario():
 def cadastro_reserva():
     return render_template('html/cadastro_reserva.html')
 
-@app.route('/funcionarios')
-def funcionarios():
-    return render_template('html/funcionarios.html')
 
 @app.route('/gerenciamento_hospedes')
 def gerenciamento_hospedes():
