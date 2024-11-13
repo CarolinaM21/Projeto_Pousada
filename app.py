@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
+import os
 
 app = Flask(__name__)
 app.secret_key = 'batata'  # Chave secreta para sessões e mensagens flash
 
-# Função para obter conexão com o banco de dados
 def get_db_connection():
+    db_path = os.path.join(os.path.dirname(__file__), 'pousada_ypua.db')
     try:
-        conn = sqlite3.connect('C:/Users/anamaciel/Documents/pousada_ypua/pousada_ypua.db')
-        conn.row_factory = sqlite3.Row  # Define a fábrica de linhas para permitir acesso por nome da coluna
+        conn = sqlite3.connect(db_path)
+        conn.row_factory = sqlite3.Row
+        print("Conexão com o banco de dados estabelecida com sucesso!")  # Mensagem de confirmação
         return conn
     except sqlite3.Error as e:
         print(f"Erro ao conectar ao banco de dados: {e}")
@@ -28,6 +30,8 @@ def login():
 
         # Verifica credenciais no banco de dados
         conn = get_db_connection()
+        if conn is None:
+            return "Erro ao conectar ao banco de dados.", 500  # Tratamento de erro
         user = conn.execute('SELECT * FROM usuarios WHERE nome_usuario = ? AND senha = ?', (username, password)).fetchone()
         conn.close()
 

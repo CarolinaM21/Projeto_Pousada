@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acomodações da Pousada</title>
-    <link rel="stylesheet" href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\css\acomodacoes.css">
-    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+    <title>Acomodações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acomodacoes.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="favicon pousada">
 
 </head>
 <body>
@@ -18,10 +18,9 @@
 
     <section class="accommodation">
         <div class="accommodation-item">
-            <img src="/images/domo.jpeg" alt="Domo">
+            <img src="{{ url_for('static', filename='images/domo2.jpeg') }}" alt="Domo">
             <div class="details">
                 <h2>Domo</h2>
-                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
                 <ul>
                     <li>Camas: 1 Casal</li>
                 </ul>
@@ -57,10 +56,9 @@
         </div>
 
         <div class="accommodation-item">
-            <img src="/images/charrua.jpeg" alt="Charrua (Bus)">
+            <img src="{{ url_for('static', filename='images/charrua.jpeg') }}" alt="Charrua (Bus)">
             <div class="details">
                 <h2>Charrua (Bus)</h2>
-                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
                 <ul>
                     <li>Camas: 1 Casal</li>
                 </ul>
@@ -96,14 +94,14 @@
         </div>
 
         <div class="accommodation-item">
-            <img src="/images/chale familia.jpg" alt="Chalé">
+            <img src="{{ url_for('static', filename='images/chale.jpg') }}" alt="Chalé">
             <div class="details">
                 <h2>Chalé Família</h2>
                 <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
                 <ul>
-                    <li>Camas: 1 Casal
-                    <hr>
-                    Solteiro: 3
+                    <li>Camas: 
+                        Casal: 1
+                        Solteiro: 3
                     </li>
                 </ul>
                 <div class="icons">
@@ -138,10 +136,9 @@
         </div>
 
         <div class="accommodation-item">
-            <img src="/images/cabana1.jpeg" alt="Cabana">
+            <img src="{{ url_for('static', filename='images/cabana1.jpeg') }}" alt="Cabana">
             <div class="details">
                 <h2>Cabana</h2>
-                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
                 <ul>
                     <li>Camas: 1 Casal</li>
                 </ul>

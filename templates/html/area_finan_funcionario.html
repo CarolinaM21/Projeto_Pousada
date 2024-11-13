@@ -3,33 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área Financeiro do Funcionário</title>
-    <link rel="stylesheet" href="/css/area_finan_funcionario.css">
-    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
-
+    <title>Financeiro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/area_finan_funcionario.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <h2>Olá, Ciclano</h2>
-            <div class="info">
-                <p><strong>Cargo:</strong> Recepcionista</p>
-                <p><strong>Matrícula:</strong> 1009900</p>
-                <p>Colaborador desde Agosto, 2015.</p>
-                <p><strong>Eventos:</strong></p>
+        <aside class="sidebar">
+            <div class="profile">
+                <h2>Olá, Ciclano</h2>
+                <p class="role">Recepcionista</p>
+                <p class="id">Matrícula: 1009900</p>
+                <p class="joined">Colaborador desde Agosto, 2015.</p>
+            </div>
+            <div class="events">
+                <h3>Eventos</h3>
                 <div class="event-box">
-                    <p>2 Fazem aniversário esse mês</p>
+                    <p>🎉 2 aniversários este mês</p>
                 </div>
             </div>
-        </div>
-        <div class="main">
-            <div class="grid">
-                <div class="grid-item">Solicitações</div>
-                <div class="grid-item">Demonstrativos</div>
-                <div class="grid-item">Espelho de Ponto</div>
-                <div class="grid-item">Benefícios</div>
-            </div>
-        </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Área Financeira</h1>
+                <p>Bem-vindo à sua área financeira. Acesse as opções abaixo para visualizar ou solicitar informações financeiras.</p>
+            </header>
+            
+            <section class="card-grid">
+                <div class="card">
+                    <h3>Solicitações</h3>
+                    <p>Envie e acompanhe suas solicitações financeiras.</p>
+                </div>
+                <div class="card">
+                    <h3>Demonstrativos</h3>
+                    <p>Veja seus demonstrativos de pagamento.</p>
+                </div>
+                <div class="card">
+                    <h3>Espelho de Ponto</h3>
+                    <p>Acompanhe seus registros de ponto.</p>
+                </div>
+                <div class="card">
+                    <h3>Benefícios</h3>
+                    <p>Confira seus benefícios atuais.</p>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
