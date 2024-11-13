@@ -1,0 +1,18 @@
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database(':memory:'); // Para testes, você pode usar ':memory:' ou um caminho físico para um arquivo de banco
+
+// Criação da tabela
+db.serialize(() => {
+    db.run(`CREATE TABLE IF NOT EXISTS reservas (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT,
+        email TEXT,
+        telefone TEXT,
+        checkin TEXT,
+        checkout TEXT,
+        quantidade INTEGER,
+        acomodacao TEXT
+    )`);
+});
+
+module.exports = db;

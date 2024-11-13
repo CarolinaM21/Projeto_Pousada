@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àrea do Funcionário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/funcionarios.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Título da Página -->
+        <header class="header">
+            <h1>Funcionários</h1>
+            <button class="btn-add" onclick="adicionarFuncionario()"><i class="fas fa-plus"></i> Adicionar Funcionário</button>
+        </header>
+
+        <!-- Tabela de Funcionários -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Horário de Trabalho</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for funcionario in funcionarios %}
+                <tr>
+                    <td>{{ funcionario.nome }}</td>
+                    <td>{{ funcionario.cargo }}</td>
+                    <td>{{ funcionario.horario_trabalho }}</td>
+                    <td>{{ funcionario.status }}</td>
+                    <td>
+                        <button class="btn-edit" onclick="editarFuncionario({{ funcionario.id_funcionario }})"><i class="fas fa-edit"></i></button>
+                        <button class="btn-delete" onclick="excluirFuncionario({{ funcionario.id_funcionario }})"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/funcionarios.js') }}"></script>
+</body>
+</html>

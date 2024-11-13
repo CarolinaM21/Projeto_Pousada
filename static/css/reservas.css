@@ -1,0 +1,145 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Fundo claro */
+    color: #333; /* Texto escuro */
+    padding: 20px;
+}
+
+h1 {
+    color: #b22222; /* Vermelho forte */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Botão padrão */
+.button {
+    background-color: #b22222; /* Vermelho forte */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #8b1a1a; /* Vermelho mais escuro no hover */
+}
+
+/* Formulário de filtro */
+.filter-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.filter-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.filter-form input, .filter-form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.filter-form button {
+    background-color: #b22222;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.filter-form button:hover {
+    background-color: #8b1a1a;
+}
+
+/* Tabela de Reservas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 15px;
+}
+
+table th {
+    background-color: #b22222; /* Vermelho forte */
+    color: #fff;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Linha de fundo claro para alternância */
+}
+
+table tr:hover {
+    background-color: #ffe5e5; /* Linha com destaque ao passar o mouse */
+}
+
+/* Links de ação (editar e cancelar) */
+table a {
+    color: #b22222;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+table a:hover {
+    color: #8b1a1a;
+    text-decoration: underline;
+}
+
+/* Mensagens de erro e sucesso */
+.error-message {
+    color: #b22222;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: #28a745; /* Verde para mensagens de sucesso */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.login-footer a {
+    color: #b22222;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
