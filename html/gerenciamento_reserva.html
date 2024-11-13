@@ -4,56 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Reservas</title>
-    <link rel="stylesheet" href="/css/gerenciamento_reseva.css">
-    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
-
+    <link rel="stylesheet" href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\css\gerenciamento_reseva.css">
+    <link rel="icon" href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\images\favicon.ico" type="favicon pousada">
 </head>
 <body>
     <div class="sidebar">
         <button class="sidebar-btn">Admin</button>
-        <button class="sidebar-btn active">
-            <img src="calendar-icon.png" alt="Calendário">
-        </button>
-        <!-- Adicione mais botões conforme necessário -->
     </div>
+
     <div class="container">
         <header>
-            <h1>Gerencimento de Reservas</h1>
+            <h1>Gerenciamento de Reservas</h1>
             <input type="text" placeholder="Essa semana" class="search-input">
             <button class="control-panel-btn">Painel de controle</button>
         </header>
 
-        <div class="reservations">
-            <div class="reservation-card">
-                <h2>Maria Alice Silva</h2>
-                <p>+2 (adultos)</p>
-                <p>Acomodação: Suítes 1 e 2</p>
-                <p>Período da reserva: <strong>De 27/nov a 30/nov de 2023</strong></p>
-                <p>Situação pagamento: <span class="status pending">Pagamento PENDENTE</span></p>
-            </div>
-            <div class="reservation-card">
-                <h2>Maria Alice Silva</h2>
-                <p>+2 (adultos)</p>
-                <p>Acomodação: Suítes 1 e 2</p>
-                <p>Período da reserva: <strong>De 27/nov a 30/nov de 2023</strong></p>
-                <p>Situação pagamento: <span class="status ok">Pagamento OK</span></p>
-            </div>
-            <div class="reservation-card">
-                <h2>Maria Alice Silva</h2>
-                <p>+2 (adultos)</p>
-                <p>Acomodação: Suítes 1 e 2</p>
-                <p>Período da reserva: <strong>De 27/nov a 30/nov de 2023</strong></p>
-                <p>Situação pagamento: <span class="status pending">Pagamento PENDENTE</span></p>
-            </div>
+        <div class="reservations" id="reservations">
+            <!-- As reservas serão exibidas aqui -->
         </div>
 
-        <button class="new-reservation-btn">Cadastrar nova reserva</button>
+        <button class="new-reservation-btn" onclick="window.location.href='reserva.html'">Cadastrar nova reserva</button>
         <div class="pagination">
             <p>1 de 3</p>
             <button>próxima página</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Função para carregar e exibir as reservas
+        function carregarReservas() {
+            const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+            const reservationsContainer = document.getElementById('reservations');
+
+            // Limpa o container antes de exibir as reservas
+            reservationsContainer.innerHTML = '';
+
+            // Exibe cada reserva
+            reservas.forEach(reserva => {
+                const reservaCard = `
+                    <div class="reservation-card">
+                        <h2>${reserva.nome}</h2>
+                        <p>Quantidade: ${reserva.quantidade}</p>
+                        <p>Acomodação: ${reserva.acomodacao}</p>
+                        <p>Período da reserva: <strong>De ${new Date(reserva.checkin).toLocaleDateString()} a ${new Date(reserva.checkout).toLocaleDateString()}</strong></p>
+                        <p>Telefone: ${reserva.telefone}</p>
+                        <p>Email: ${reserva.email}</p>
+                    </div>
+                `;
+                reservationsContainer.innerHTML += reservaCard;
+            });
+        }
+
+        // Carrega as reservas quando a página é carregada
+        document.addEventListener('DOMContentLoaded', carregarReservas);
+    </script>
 </body>
 </html>
+
