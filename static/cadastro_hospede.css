@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Fundo neutro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #8b0000; /* Vermelho escuro para o título */
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #8b0000; /* Vermelho escuro para o texto dos rótulos */
+    font-weight: bold; /* Deixa o texto mais forte */
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333; /* Texto escuro para melhor contraste */
+    font-weight: bold; /* Deixa o texto do campo mais forte */
+    border: 1px solid #8b0000; /* Borda em vermelho escuro */
+    border-radius: 4px;
+    background-color: #ffffff; /* Vermelho claro para o fundo */
+}
+
+input::placeholder {
+    color: #8b0000; /* Deixa o texto do placeholder no vermelho escuro */
+    font-weight: bold; /* Deixa o placeholder mais forte */
+}
+
+input:focus {
+    outline: none;
+    border-color: #660000; /* Tom mais escuro para o foco */
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.3); /* Efeito de foco com vermelho escuro */
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #8b0000; /* Vermelho escuro para o botão */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold; /* Deixa o texto do botão mais forte */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #660000; /* Tom mais escuro de vermelho para o efeito hover */
+}

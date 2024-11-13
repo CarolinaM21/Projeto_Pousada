@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pousada Quinta do Ypuã</title>
+    <!-- Caminho do arquivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <!-- Caminho e sintaxe do favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Logotipo e Nome do Sistema -->
+        <div class="login-header">
+            <img src="{{ url_for('static', filename='images/logo-pousada-quinta-do-ypua.webp') }}" alt="Logotipo da Pousada" class="logo">
+            <h1>Sistema de Gerenciamento - Pousada Quinta do Ypuã</h1>
+        </div>
+
+        <!-- Formulário de Login -->
+        <!-- Corrigido para enviar para a rota Flask 'login' -->
+        <form action="{{ url_for('login') }}" method="POST" class="login-form">
+            <!-- Campo de Nome de Usuário ou Email -->
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required placeholder="Digite seu usuário ou email">
+
+            <!-- Campo de Senha -->
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+
+            <!-- Botão de Login -->
+            <button type="submit" class="login-button">Entrar</button>
+            
+            <!-- Mensagem de Erro -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="error-message">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </form>
+
+        <!-- Rodapé -->
+        <footer class="login-footer">
+            <p>Suporte: <a href="mailto:suporte@pousada.com">suporte@pousada.com</a></p>
+            <p>Versão 1.0.0</p>
+        </footer>
+    </div>
+
+</body>
+</html>

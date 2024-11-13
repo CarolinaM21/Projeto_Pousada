@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Hospedagem</title>
+    <link rel="stylesheet" href="cadastroreserva.css">
+    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+
+</head>
+<body>
+    <div class="form-container">
+        <div class="form">
+            <h2>Reservar hospedagem</h2>
+            <form>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="data">Data estadia:</label>
+                <input type="date" id="data" name="data" required>
+
+                <label for="quantidade">Quantidade de pessoas:</label>
+                <select id="quantidade" name="quantidade" required>
+                    <option value="">Selecionar</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <label for="acomodacao">Acomodação:</label>
+                <select id="acomodacao" name="acomodacao" required>
+                    <option value="">Selecionar</option>
+                    <option value="quarto-standard">Quarto Standard</option>
+                    <option value="quarto-luxo">Quarto Luxo</option>
+                </select>
+
+                <button type="submit" class="salvar-btn">Salvar</button>
+            </form>
+        </div>
+        <div class="image-placeholder">
+            <img src="/images/pousada2.webp" alt="pousada">
+            <!-- Placeholder para a imagem -->
+        </div>
+    </div>
+</body>
+</html>

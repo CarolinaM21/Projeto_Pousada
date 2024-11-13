@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Hóspede</title>
+</head>
+<body>
+    <h1>Adicionar Novo Hóspede</h1>
+    <form action="{{ url_for('add') }}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required><br>
+        
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" required><br>
+        
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone"><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email"><br>
+        
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" name="data_nascimento"><br>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar para a Lista</a>
+</body>
+</html>

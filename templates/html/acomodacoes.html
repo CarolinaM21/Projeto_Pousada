@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acomodações da Pousada</title>
+    <link rel="stylesheet" href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\css\acomodacoes.css">
+    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
+
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Nossas acomodações</h1>
+        
+    </header>
+
+    <section class="accommodation">
+        <div class="accommodation-item">
+            <img src="/images/domo.jpeg" alt="Domo">
+            <div class="details">
+                <h2>Domo</h2>
+                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$590</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                 <!-- Formulário de Simulação -->
+                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Domo', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\html\cadastro_reseva.html" class="btn-control-panel">Cadastro de Reserva</a>
+                </form>
+                <div class="booking-result"></div>
+            </div>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="/images/charrua.jpeg" alt="Charrua (Bus)">
+            <div class="details">
+                <h2>Charrua (Bus)</h2>
+                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$490</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                 <!-- Formulário de Simulação -->
+                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Charrua', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\html\cadastro_reseva.html" class="btn-control-panel">Cadastro de Reserva</a>
+                </form>
+                <div class="booking-result"></div>
+            </div>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="/images/chale familia.jpg" alt="Chalé">
+            <div class="details">
+                <h2>Chalé Família</h2>
+                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
+                <ul>
+                    <li>Camas: 1 Casal
+                    <hr>
+                    Solteiro: 3
+                    </li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$590</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                 <!-- Formulário de Simulação -->
+                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Chalé', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\html\cadastro_reseva.html" class="btn-control-panel">Cadastro de Reserva</a>
+                </form>
+                <div class="booking-result"></div>
+            </div>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="/images/cabana1.jpeg" alt="Cabana">
+            <div class="details">
+                <h2>Cabana</h2>
+                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$590</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                 <!-- Formulário de Simulação -->
+                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Cabana', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+                   
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\html\cadastro_reseva.html" class="btn-control-panel">Cadastro de Reserva</a>
+                    </form>
+                <div class="booking-result"></div>
+            </div>
+        </div>
+        <script>
+            function simulateBooking(event, acomodacao, preco) {
+                event.preventDefault(); // Impede o envio do formulário
+            
+                // Obtém os elementos do formulário
+                const form = event.target;
+                const checkinDate = new Date(form.checkin.value);
+                const checkoutDate = new Date(form.checkout.value);
+                const adults = form.adults.value;
+            
+                // Verifica se as datas são válidas
+                if (isNaN(checkinDate) || isNaN(checkoutDate)) {
+                    alert("Por favor, selecione datas válidas.");
+                    return;
+                }
+            
+                // Calcula a diferença em dias
+                const days = (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24);
+                if (days <= 0) {
+                    alert("A data de check-out deve ser após a data de check-in.");
+                    return;
+                }
+            
+                // Calcula o valor total
+                const dailyRate = parseFloat(preco.replace("R$", "").replace(",", ".")); // Converte o preço para número
+                const total = dailyRate * days;
+            
+                // Atualiza o conteúdo da div de resultado abaixo do formulário
+                const resultDiv = form.nextElementSibling; // Seleciona a div booking-result
+                resultDiv.innerHTML = `
+                    <h3>Simulação de Reserva para ${acomodacao}</h3>
+                    <p>Valor para ${days} dia(s) e ${adults} adulto(s): <strong>R$${total.toFixed(2)}</strong></p>
+                `;
+            }
+            </script>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
