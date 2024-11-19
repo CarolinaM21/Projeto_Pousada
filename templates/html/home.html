@@ -15,11 +15,11 @@
         <div class="logo">Pousada <span>Quinta do Ypuã</span></div>
         <nav class="sidebar-nav">
             <ul>
-                <li><a href="{{ url_for('static', filename='html/gerenciamento_reserva.html') }}"><i class="fas fa-calendar-check"></i> Gerenciamento de Reservas</a></li>
-                <li><a href="{{ url_for('static', filename='html/gerenciamento_hospedes.html') }}"><i class="fas fa-bed"></i> Gerenciamento de Hóspedes</a></li>
-                <li><a href="{{ url_for('static', filename='html/gerenciamento_funcionarios.html') }}"><i class="fas fa-users"></i> Funcionários</a></li>
-                <li><a href="{{ url_for('static', filename='html/agenda_geral.html') }}"><i class="fas fa-calendar-alt"></i> Agenda Geral</a></li>
-                <li><a href="{{ url_for('static', filename='html/area_finan_funcionario.html') }}"><i class="fas fa-chart-line"></i> Financeiro </a></li>
+                <li><a href="{{ url_for('listar_reservas') }}"><i class="fas fa-calendar-check"></i> Gerenciamento de Reservas</a></li>
+                <li><a href="{{ url_for('gerenciamento_hospedes') }}"><i class="fas fa-bed"></i> Gerenciamento de Hóspedes</a></li>
+                <li><a href="{{ url_for('funcionarios') }}"><i class="fas fa-users"></i> Funcionários</a></li>
+                <li><a href="{{ url_for('agenda_geral') }}"><i class="fas fa-calendar-alt"></i> Agenda Geral</a></li>
+                <li><a href="{{ url_for('area_financeira_funcionario') }}"><i class="fas fa-chart-line"></i> Financeiro</a></li>
             </ul>
         </nav>
     </aside>
