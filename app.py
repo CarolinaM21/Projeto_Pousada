@@ -114,7 +114,7 @@ def acomodacoes():
 
 @app.route('/add')
 def add():
-    return render_template('html/add.html')
+    return render_template('html/add_hospede.html')
 
 @app.route('/administrador')
 def administrador():

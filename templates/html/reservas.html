@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reservas.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+
 </head>
 <body>
     <h1>Listagem de Reservas</h1>
@@ -35,12 +37,12 @@
     <table>
         <thead>
             <tr>
-                <th>Id da Reserva</th>
-                <th>Id do Hóspede</th>
-                <th>Nome do Hóspede</th>
+                <th>Código da Reserva</th>
+                <th>Código do Hóspede</th>
+                <th>Nome</th>
                 <th>Id da Acomodação</th>
-                <th>Data de Entrada</th>
-                <th>Data de Saída</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
                 <th>Status</th>
                 <th>Valor Total</th>
                 <th>Data da Reserva</th>
