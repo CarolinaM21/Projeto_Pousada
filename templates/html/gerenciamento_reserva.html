@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Reservas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gerenciamento_reserva.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="favicon pousada">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="sidebar-btn">Admin</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Gerenciamento de Reservas</h1>
+            <input type="text" placeholder="Essa semana" class="search-input">
+            <button class="control-panel-btn">Painel de controle</button>
+        </header>
+
+        <div class="reservations" id="reservations">
+            <!-- As reservas serão exibidas aqui -->
+        </div>
+
+        <button class="new-reservation-btn" onclick="window.location.href='reserva.html'">Cadastrar nova reserva</button>
+        <div class="pagination">
+            <p>1 de 3</p>
+            <button>próxima página</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar e exibir as reservas
+        function carregarReservas() {
+            const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+            const reservationsContainer = document.getElementById('reservations');
+
+            // Limpa o container antes de exibir as reservas
+            reservationsContainer.innerHTML = '';
+
+            // Exibe cada reserva
+            reservas.forEach(reserva => {
+                const reservaCard = `
+                    <div class="reservation-card">
+                        <h2>${reserva.nome}</h2>
+                        <p>Quantidade: ${reserva.quantidade}</p>
+                        <p>Acomodação: ${reserva.acomodacao}</p>
+                        <p>Período da reserva: <strong>De ${new Date(reserva.checkin).toLocaleDateString()} a ${new Date(reserva.checkout).toLocaleDateString()}</strong></p>
+                        <p>Telefone: ${reserva.telefone}</p>
+                        <p>Email: ${reserva.email}</p>
+                    </div>
+                `;
+                reservationsContainer.innerHTML += reservaCard;
+            });
+        }
+
+        // Carrega as reservas quando a página é carregada
+        document.addEventListener('DOMContentLoaded', carregarReservas);
+    </script>
+</body>
+</html>
+

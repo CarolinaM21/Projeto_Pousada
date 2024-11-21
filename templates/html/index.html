@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Hóspedes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='hospede.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Hóspedes</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Data de Nascimento</th>
+                    <th>Data de Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hospede in hospedes %}
+                    <tr>
+                        <td>{{ hospede['nome'] }}</td>
+                        <td>{{ hospede['cpf'] }}</td>
+                        <td>{{ hospede['telefone'] }}</td>
+                        <td>{{ hospede['email'] }}</td>
+                        <td>{{ hospede['data_nascimento'] }}</td>
+                        <td>{{ hospede['data_registro'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('cadastro') }}" class="add-link">Adicionar Novo Hóspede</a>
+    </div>
+</body>
+</html>
