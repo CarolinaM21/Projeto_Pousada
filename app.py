@@ -1,13 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
+import os
 
 app = Flask(__name__)
 app.secret_key = 'batata'  # Chave secreta para sessões e mensagens flash
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DB_PATH = os.path.join(BASE_DIR, 'pousada_ypua.db')
+
 # Função para obter conexão com o banco de dados
 def get_db_connection():
     try:
-        conn = sqlite3.connect('C:/Users/anamaciel/Documents/pousada_ypua/pousada_ypua.db')
+        conn = sqlite3.connect(DB_PATH)
         conn.row_factory = sqlite3.Row  # Define a fábrica de linhas para permitir acesso por nome da coluna
         return conn
     except sqlite3.Error as e:
@@ -100,6 +105,37 @@ def listar_reservas():
     conn.close()
     return render_template('html/reservas.html', reservas=reservas)
 
+@app.route('/cadastro_reserva', methods=['GET', 'POST'])
+def cadastro_reserva():
+    if request.method == 'POST':
+        id_hospede = request.form['id_hospede']
+        id_acomodacao = request.form['id_acomodacao']
+        data_checkin = request.form['data_checkin']
+        data_checkout = request.form['data_checkout']
+        status = request.form['status']
+        valor_total = request.form['valor_total']
+
+        conn = get_db_connection()
+        if conn:
+            conn.execute('''
+                INSERT INTO reservas 
+                (id_hospede, id_acomodacao, data_checkin, data_checkout, status, valor_total, data_reserva)
+                VALUES (?, ?, ?, ?, ?, ?, DATE('now'))
+            ''', (id_hospede, id_acomodacao, data_checkin, data_checkout, status, valor_total))
+            conn.commit()
+            conn.close()
+
+        # Redireciona para a listagem de reservas após o cadastro
+        return redirect(url_for('listar_reservas'))
+
+    # Para GET, exibe o formulário
+    conn = get_db_connection()
+    hospedes = conn.execute('SELECT * FROM hospedes').fetchall() if conn else []
+    acomodacoes = conn.execute('SELECT id_acomodacao, nomes FROM acomodacoes').fetchall() if conn else []
+    conn.close()
+    return render_template('html/cadastro_reserva.html', hospedes=hospedes, acomodacoes=acomodacoes)
+
+
 @app.route('/funcionarios')
 def funcionarios():
     conn = get_db_connection()
@@ -127,11 +163,6 @@ def agenda_geral():
 @app.route('/area_financeira_funcionario')
 def area_financeira_funcionario():
     return render_template('html/area_finan_funcionario.html')
-
-@app.route('/cadastro_reserva')
-def cadastro_reserva():
-    return render_template('html/cadastro_reserva.html')
-
 
 @app.route('/gerenciamento_hospedes')
 def gerenciamento_hospedes():

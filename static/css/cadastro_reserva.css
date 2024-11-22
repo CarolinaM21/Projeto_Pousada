@@ -1,0 +1,118 @@
+/* Reseta margens e padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuração geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Cor de fundo clara e suave */
+    color: #333; /* Texto em cor escura para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Ajusta o espaçamento interno para dispositivos menores */
+}
+
+/* Estilo principal do container */
+.form-container {
+    background-color: #ffffff; /* Fundo branco para contraste */
+    border: 3px solid #b71c1c; /* Borda vermelha forte */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 30px; /* Maior espaçamento interno */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombras mais visíveis */
+    width: 100%;
+    max-width: 450px; /* Limita o tamanho do formulário */
+    animation: fadeIn 0.5s ease; /* Adiciona animação de entrada */
+}
+
+/* Animação para suavizar entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 26px;
+    text-align: center;
+    color: #b71c1c; /* Vermelho forte */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #b71c1c; /* Linha decorativa abaixo do título */
+    padding-bottom: 10px;
+}
+
+/* Estilo geral do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os elementos do formulário */
+}
+
+/* Estilo dos rótulos (labels) */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b71c1c; /* Vermelho forte */
+}
+
+/* Estilo dos campos de entrada */
+input, select {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Bordas cinza */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fundo claro */
+    transition: border-color 0.3s ease;
+}
+
+/* Efeito de foco nos campos */
+input:focus, select:focus {
+    outline: none;
+    border-color: #b71c1c; /* Destaca a borda ao focar */
+    box-shadow: 0 0 5px rgba(183, 28, 28, 0.3); /* Sombra ao focar */
+}
+
+/* Estilo para o botão */
+button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Texto branco */
+    background-color: #b71c1c; /* Vermelho forte */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    background-color: #a31111; /* Vermelho mais escuro */
+    transform: scale(1.03); /* Leve aumento no tamanho */
+}
+
+/* Alinhar links ou elementos extras */
+.link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #b71c1c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #a31111; /* Vermelho mais escuro no hover */
+    text-decoration: underline;
+}
