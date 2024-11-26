@@ -6,34 +6,39 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Fundo claro */
+    font-family: 'Poppins', Arial, sans-serif; /* Fonte padronizada */
+    background-color: #f0f4f9; /* Fundo claro e suave */
     color: #333; /* Texto escuro */
     padding: 20px;
 }
 
 h1 {
-    color: #b22222; /* Vermelho forte */
+    color: #0d47a1; /* Azul forte */
     text-align: center;
     margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra no título */
 }
 
 /* Botão padrão */
 .button {
-    background-color: #b22222; /* Vermelho forte */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul moderno */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     display: inline-block;
     margin-bottom: 20px;
     font-weight: bold;
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
 .button:hover {
-    background-color: #8b1a1a; /* Vermelho mais escuro no hover */
+    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
+    transform: scale(1.05); /* Leve crescimento no hover */
 }
 
 /* Formulário de filtro */
@@ -52,23 +57,31 @@ h1 {
 .filter-form input, .filter-form select {
     padding: 8px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 14px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.filter-form input:focus, .filter-form select:focus {
+    border-color: #0d47a1; /* Azul forte no foco */
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
 }
 
 .filter-form button {
-    background-color: #b22222;
+    background: linear-gradient(90deg, #0d47a1, #1e88e5);
     color: #fff;
     border: none;
     padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .filter-form button:hover {
-    background-color: #8b1a1a;
+    background: linear-gradient(90deg, #002171, #1565c0);
+    transform: scale(1.05);
 }
 
 /* Tabela de Reservas */
@@ -76,6 +89,9 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para tabela */
+    border-radius: 8px; /* Borda arredondada */
+    overflow: hidden;
 }
 
 table th, table td {
@@ -86,45 +102,52 @@ table th, table td {
 }
 
 table th {
-    background-color: #b22222; /* Vermelho forte */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente no cabeçalho */
     color: #fff;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f2f2; /* Linha de fundo claro para alternância */
+    background-color: #f2f7fc; /* Fundo claro alternado */
 }
 
 table tr:hover {
-    background-color: #ffe5e5; /* Linha com destaque ao passar o mouse */
+    background-color: #e3f2fd; /* Azul claro no hover */
+    transform: scale(1.01); /* Leve crescimento */
 }
 
 /* Links de ação (editar e cancelar) */
 table a {
-    color: #b22222;
+    color: #0d47a1; /* Azul forte */
     font-weight: bold;
     text-decoration: none;
     margin: 0 5px;
+    transition: color 0.3s, text-shadow 0.2s;
 }
 
 table a:hover {
-    color: #8b1a1a;
+    color: #1565c0; /* Azul mais escuro no hover */
+    text-shadow: 0 0 3px rgba(13, 71, 161, 0.3); /* Efeito de brilho */
     text-decoration: underline;
 }
 
 /* Mensagens de erro e sucesso */
 .error-message {
-    color: #b22222;
+    color: #d32f2f; /* Vermelho para mensagens de erro */
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+    font-size: 1.1em;
 }
 
 .success-message {
-    color: #28a745; /* Verde para mensagens de sucesso */
+    color: #388e3c; /* Verde para mensagens de sucesso */
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+    font-size: 1.1em;
 }
 
 /* Footer */
@@ -136,10 +159,12 @@ table a:hover {
 }
 
 .login-footer a {
-    color: #b22222;
+    color: #0d47a1; /* Azul forte */
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .login-footer a:hover {
+    color: #1565c0; /* Azul mais escuro no hover */
     text-decoration: underline;
 }

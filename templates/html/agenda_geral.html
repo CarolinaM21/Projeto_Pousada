@@ -3,27 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendário da Pousada</title>
-    <link rel="stylesheet" href="C:\Users\mateu\OneDrive\Área de Trabalho\Projeto_Pousada\Projeto_Pousada\css\agenda_geral.css">
-    <link rel="icon" href="/images/favicon.ico" type="favicon pousada">
-
+    <title>Agenda Geral</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/agenda_geral.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
     <div class="calendar-container">
         <header>
-            <h1>Calendário da Pousada</h1>
-            <button class="close-btn" onclick="window.location.href='administrador.html'">X</button>
+            <h1>Agenda Geral</h1>
         </header>
-        <div class="calendar-content">
-            <!-- Conteúdo do calendário, exemplo simplificado -->
-            <button class="nav-btn" id="prev-btn">&#8249;</button>
+
+        <section class="calendar-content">
+            <!-- Navegação do mês -->
+            <button class="nav-btn">&laquo;</button>
             <div class="month">
-                <h2>Novembro</h2>
-                <!-- Conteúdo do mês de novembro -->
+                <h2>Novembro 2024</h2>
             </div>
-            <button class="nav-btn" id="next-btn">&#8250;</button>
-        </div>
+            <button class="nav-btn">&raquo;</button>
+        </section>
+
+        <!-- Tabela do calendário -->
+        <table class="calendar-table">
+            <thead>
+                <tr>
+                    <th>Dom</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                    <th>Sáb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Legenda dos eventos -->
+        <section class="legend">
+            <div class="legend-item">
+                <div class="legend-color update-meeting"></div>
+                <span>Atualização</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color employee-committee"></div>
+                <span>Reunião de Funcionários</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color general-meeting"></div>
+                <span>Reunião Geral</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color vacation"></div>
+                <span>Férias</span>
+            </div>
+        </section>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

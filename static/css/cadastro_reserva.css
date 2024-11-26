@@ -1,4 +1,4 @@
-/* Reseta margens e padding padrão */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -7,26 +7,26 @@
 
 /* Configuração geral do corpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9; /* Cor de fundo clara e suave */
-    color: #333; /* Texto em cor escura para contraste */
+    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
+    background-color: #f0f4f9; /* Fundo claro e suave */
+    color: #333; /* Texto escuro para contraste */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px; /* Ajusta o espaçamento interno para dispositivos menores */
+    padding: 20px;
 }
 
 /* Estilo principal do container */
 .form-container {
-    background-color: #ffffff; /* Fundo branco para contraste */
-    border: 3px solid #b71c1c; /* Borda vermelha forte */
-    border-radius: 10px; /* Cantos arredondados */
-    padding: 30px; /* Maior espaçamento interno */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombras mais visíveis */
+    background: linear-gradient(145deg, #ffffff, #e3f2fd); /* Gradiente sutil para o fundo */
+    border: 2px solid #0d47a1; /* Borda azul forte */
+    border-radius: 12px; /* Cantos arredondados */
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombras para profundidade */
     width: 100%;
-    max-width: 450px; /* Limita o tamanho do formulário */
-    animation: fadeIn 0.5s ease; /* Adiciona animação de entrada */
+    max-width: 500px; /* Limita o tamanho do formulário */
+    animation: fadeIn 0.5s ease; /* Animação de entrada */
 }
 
 /* Animação para suavizar entrada */
@@ -45,11 +45,13 @@ body {
 h1 {
     font-size: 26px;
     text-align: center;
-    color: #b71c1c; /* Vermelho forte */
+    color: #0d47a1; /* Azul forte */
     margin-bottom: 20px;
     text-transform: uppercase;
-    border-bottom: 2px solid #b71c1c; /* Linha decorativa abaixo do título */
+    border-bottom: 2px solid #0d47a1; /* Linha decorativa abaixo do título */
     padding-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 /* Estilo geral do formulário */
@@ -63,24 +65,24 @@ form {
 label {
     font-size: 14px;
     font-weight: bold;
-    color: #b71c1c; /* Vermelho forte */
+    color: #0d47a1; /* Azul forte */
 }
 
 /* Estilo dos campos de entrada */
 input, select {
     padding: 12px;
     font-size: 14px;
-    border: 1px solid #ccc; /* Bordas cinza */
-    border-radius: 5px;
+    border: 1px solid #ccc; /* Bordas padrão cinza */
+    border-radius: 25px; /* Bordas arredondadas modernas */
     background-color: #f9f9f9; /* Fundo claro */
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efeito de foco nos campos */
 input:focus, select:focus {
     outline: none;
-    border-color: #b71c1c; /* Destaca a borda ao focar */
-    box-shadow: 0 0 5px rgba(183, 28, 28, 0.3); /* Sombra ao focar */
+    border-color: #0d47a1; /* Destaca a borda ao focar */
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Sombra azul ao focar */
 }
 
 /* Estilo para o botão */
@@ -89,17 +91,19 @@ button {
     font-size: 16px;
     font-weight: bold;
     color: #ffffff; /* Texto branco */
-    background-color: #b71c1c; /* Vermelho forte */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul moderno */
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Bordas arredondadas */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* Efeito de hover no botão */
 button:hover {
-    background-color: #a31111; /* Vermelho mais escuro */
-    transform: scale(1.03); /* Leve aumento no tamanho */
+    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
+    transform: scale(1.05); /* Leve aumento no tamanho */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Intensificação da sombra */
 }
 
 /* Alinhar links ou elementos extras */
@@ -107,12 +111,13 @@ button:hover {
     text-align: center;
     margin-top: 10px;
     font-size: 14px;
-    color: #b71c1c;
+    color: #0d47a1; /* Azul forte */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .link:hover {
-    color: #a31111; /* Vermelho mais escuro no hover */
+    color: #1565c0; /* Azul intermediário no hover */
+    text-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Efeito de brilho */
     text-decoration: underline;
 }

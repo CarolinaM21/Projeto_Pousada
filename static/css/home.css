@@ -7,35 +7,41 @@
 
 body {
     display: flex;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #f0f4f9; /* Fundo claro e neutro */
     margin: 0;
 }
 
 /* Estilos da Barra Lateral */
 .sidebar {
     width: 250px;
-    background-color: #ffffff;
-    color: #333;
+    background: linear-gradient(180deg, #0d47a1, #1565c0); /* Gradiente moderno */
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     position: fixed;
     height: 100%;
-    border-right: 2px solid #e0e0e0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s;
+}
+
+.sidebar:hover {
+    transform: scale(1.01); /* Leve efeito de crescimento ao passar o mouse */
 }
 
 .sidebar .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
-    color: #b71c1c;
+    color: white;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de sombra no texto */
 }
 
 .sidebar .logo span {
-    color: #333;
+    color: #bbdefb; /* Azul claro */
 }
 
 .sidebar-nav ul {
@@ -50,23 +56,25 @@ body {
 
 .sidebar-nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 1.1em;
+    color: white;
+    font-size: 1.2em;
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .sidebar-nav ul li a i {
     margin-right: 10px;
-    color: #b71c1c;
+    color: #bbdefb;
 }
 
 .sidebar-nav ul li a:hover {
-    background-color: #ffe5e5;
-    color: #b71c1c;
+    background-color: #1e88e5; /* Azul intermediário */
+    color: white;
+    transform: scale(1.05); /* Leve crescimento no hover */
 }
 
 /* Conteúdo Principal */
@@ -74,21 +82,37 @@ body {
     margin-left: 250px;
     padding: 20px;
     flex: 1;
+    animation: fadeIn 0.5s ease; /* Animação de entrada */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .main-header {
     text-align: center;
     margin-bottom: 40px;
-    color: #b71c1c;
+    color: #0d47a1; /* Azul forte */
 }
 
 .main-header h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .main-header p {
     color: #666;
+    font-size: 1.2em;
 }
 
 /* Painel de Resumo */
@@ -100,24 +124,25 @@ body {
 }
 
 .dashboard-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background: linear-gradient(145deg, #ffffff, #e3f2fd); /* Gradiente no fundo */
+    border: 1px solid #bbdefb;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     width: 200px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.5); /* Efeito de profundidade */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .dashboard-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);
 }
 
 .dashboard-item h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin-bottom: 10px;
-    color: #b71c1c;
+    color: #0d47a1; /* Azul forte */
 }
 
 .dashboard-item p {
@@ -128,13 +153,17 @@ body {
     display: inline-block;
     margin-top: 15px;
     color: #fff;
-    background-color: #b71c1c;
-    padding: 10px;
-    border-radius: 5px;
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente no botão */
+    padding: 10px 15px;
+    border-radius: 25px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .btn-details:hover {
-    background-color: #d32f2f;
+    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
+    transform: scale(1.1); /* Crescimento no hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }

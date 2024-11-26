@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -5,71 +6,136 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    height: 100vh;
-}
-
-.sidebar {
-    width: 25%;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.info p {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #666;
-}
-
-.event-box {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
-}
-
-.main {
-    width: 70%;
+    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
+    background-color: #f0f4f9; /* Fundo claro */
+    color: #333; /* Texto padrão */
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
+/* Contêiner principal */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    padding: 20px;
+    color: #ffffff;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+.sidebar .info p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.sidebar .event-box {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    color: #0d47a1; /* Azul escuro */
+    font-weight: bold;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: transform 0.2s, box-shadow 0.3s ease;
+}
+
+.sidebar .event-box:hover {
+    transform: scale(1.05); /* Leve aumento no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+/* Conteúdo principal */
+.main {
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grade */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    width: 100%;
 }
 
 .grid-item {
-    background-color: #f4be8f;
-    color: black;
+    background: linear-gradient(145deg, #7cb9ef, #1e88e5); /* Gradiente suave laranja */
+    color: #333; /* Texto escuro */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 150px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    text-align: center;
 }
 
 .grid-item:hover {
-    background-color: #e0ac7c;
+    transform: translateY(-5px); /* Elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+    background: linear-gradient(145deg, #0d47a1, #1e88e5); /* Gradiente mais escuro no hover */
+}
+
+/* Legenda para os botões */
+.grid-item span {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+/* Botão */
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #002171, #0d47a1); /* Gradiente mais escuro no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+.button:active {
+    transform: scale(0.98); /* Efeito de clique */
 }

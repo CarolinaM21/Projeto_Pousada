@@ -1,6 +1,14 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
+    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
+    background-color: #f0f4f9; /* Fundo claro e suave */
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,77 +17,147 @@ body {
 }
 
 .calendar-container {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    background: #ffffff; /* Fundo branco */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    width: 90%;
     max-width: 1000px;
     padding: 20px;
-    position: relative;
+    animation: fadeIn 0.5s ease; /* Animação de entrada */
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.close-btn {
-    background: none;
+header h1 {
+    font-size: 1.8rem;
+    color: #0d47a1; /* Azul forte */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-add-event {
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    color: #ffffff;
     border: none;
-    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add-event:hover {
+    background: linear-gradient(90deg, #002171, #0d47a1); /* Gradiente mais escuro no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .calendar-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
     margin-top: 20px;
 }
 
 .month {
     text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0d47a1; /* Azul forte */
+    margin-bottom: 10px;
 }
 
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #0d47a1;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-btn:hover {
+    color: #1e88e5; /* Azul mais claro no hover */
+}
+
+/* Estilização da tabela do calendário */
 .calendar-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    background-color: #ffffff;
 }
 
-.calendar-table th, .calendar-table td {
+.calendar-table th,
+.calendar-table td {
     width: 40px;
     height: 40px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border: 1px solid #ddd; /* Bordas claras */
+}
+
+.calendar-table th {
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 .calendar-table td.event {
-    background-color: #f0b8b8;
+    background-color: #e3f2fd; /* Azul claro para eventos */
     border-radius: 50%;
-    color: #fff;
+    color: #0d47a1; /* Texto azul */
+    font-weight: bold;
+}
+
+.calendar-table td:hover {
+    background-color: #bbdefb; /* Azul mais claro no hover */
 }
 
 .calendar-table td.selected {
-    background-color: #e57474;
+    background-color: #1e88e5; /* Azul mais forte para o selecionado */
+    color: #ffffff;
+    font-weight: bold;
     border-radius: 50%;
-    color: #fff;
 }
 
+/* Legenda */
 .legend {
     display: flex;
-    gap: 10px;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin-top: 20px;
+    font-size: 0.9rem;
+    color: #333;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .legend-color {
@@ -88,15 +166,18 @@ header {
     border-radius: 50%;
 }
 
-.update-meeting { background-color: #f0b8b8; }
-.employee-committee { background-color: #8c8c8c; }
-.event { background-color: #e57474; }
-.vacation { background-color: #a8e6cf; }
-.general-meeting { background-color: #ffd3b6; }
+.update-meeting {
+    background-color: #e3f2fd; /* Azul claro */
+}
 
-.nav-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+.employee-committee {
+    background-color: #fce4ec; /* Rosa claro */
+}
+
+.general-meeting {
+    background-color: #fff9c4; /* Amarelo claro */
+}
+
+.vacation {
+    background-color: #a5d6a7; /* Verde claro */
 }

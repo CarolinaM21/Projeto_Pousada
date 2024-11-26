@@ -95,7 +95,6 @@ def listar_reservas():
             reservas.id_acomodacao,
             reservas.data_checkin,
             reservas.data_checkout,
-            reservas.status,
             reservas.valor_total,
             reservas.data_reserva,
             hospedes.nome AS nome_hospede
@@ -112,7 +111,6 @@ def cadastro_reserva():
         id_acomodacao = request.form['id_acomodacao']
         data_checkin = request.form['data_checkin']
         data_checkout = request.form['data_checkout']
-        status = request.form['status']
         valor_total = request.form['valor_total']
 
         conn = get_db_connection()
@@ -121,7 +119,7 @@ def cadastro_reserva():
                 INSERT INTO reservas 
                 (id_hospede, id_acomodacao, data_checkin, data_checkout, status, valor_total, data_reserva)
                 VALUES (?, ?, ?, ?, ?, ?, DATE('now'))
-            ''', (id_hospede, id_acomodacao, data_checkin, data_checkout, status, valor_total))
+            ''', (id_hospede, id_acomodacao, data_checkin, data_checkout, valor_total))
             conn.commit()
             conn.close()
 

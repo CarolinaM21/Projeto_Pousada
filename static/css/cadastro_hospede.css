@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -5,75 +6,107 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Fundo claro */
+    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
+    background-color: #f0f4f9; /* Fundo claro */
+    color: #333; /* Texto padrão escuro */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #333; /* Texto padrão escuro */
 }
 
+/* Container do formulário */
 .form-container {
     background-color: #ffffff; /* Fundo branco do formulário */
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
     width: 400px;
-    border: 2px solid #b71c1c; /* Borda vermelha forte */
+    border: 3px solid #0d47a1; /* Borda azul forte */
+    animation: fadeIn 0.5s ease; /* Animação de entrada */
+}
+
+/* Animação para o formulário */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h2 {
     margin-bottom: 20px;
-    font-size: 26px;
-    color: #b71c1c; /* Título em vermelho forte */
+    font-size: 24px;
+    color: #0d47a1; /* Título em azul forte */
     text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil no título */
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px; /* Espaçamento entre os elementos */
 }
 
 label {
-    margin-bottom: 5px;
     font-size: 14px;
-    color: #333; /* Texto dos labels em preto */
+    color: #333; /* Texto dos labels */
     font-weight: bold;
 }
 
 input {
-    margin-bottom: 15px;
     padding: 12px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ccc; /* Borda cinza suave */
-    border-radius: 4px;
-    background-color: #fefefe; /* Fundo claro */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Fundo claro */
     color: #333; /* Texto escuro */
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
     outline: none;
-    border-color: #ac4343; /* Realce vermelho forte no foco */
+    border-color: #0d47a1; /* Realce azul forte no foco */
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Sombra ao focar */
 }
 
+/* Botão do formulário */
 button {
     padding: 12px;
     font-size: 16px;
-    background-color: #b71c1c; /* Botão com fundo vermelho forte */
-    color: #fff; /* Texto branco */
-    border: 2px solid #b71c1c;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
     font-weight: bold;
+    color: #ffffff; /* Texto branco */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas modernas */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra no botão */
 }
 
 button:hover {
-    background-color: #ff0000; /* Vermelho mais escuro no hover */
+    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
 }
 
 button:active {
     transform: scale(0.98); /* Efeito de clique */
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%; /* Ajuste de largura em telas menores */
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}

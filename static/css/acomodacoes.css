@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -5,81 +6,91 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
+    background-color: #f0f4f9; /* Fundo claro e suave */
     color: #333;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
 }
 
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease; /* Animação de entrada */
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
 header {
     text-align: center;
     margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #0d47a1; /* Azul forte */
     margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra no título */
 }
 
-.search-bar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.search-bar input,
-.search-bar select,
-.search-bar button {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.search-bar button {
-    background-color: #8B0000;
-    color: #fff;
-    cursor: pointer;
-}
-
+/* Lista de acomodações */
 .accommodation {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Estilo para cada item de acomodação */
 .accommodation-item {
     display: flex;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
     overflow: hidden;
-    background-color: #fff;
+    background: linear-gradient(145deg, #ffffff, #e3f2fd); /* Gradiente sutil no fundo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.accommodation-item:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .accommodation-item img {
     width: 300px;
     height: auto;
     object-fit: cover;
+    border-radius: 12px 0 0 12px; /* Bordas arredondadas apenas na imagem */
 }
 
+/* Detalhes das acomodações */
 .details {
     padding: 20px;
     flex-grow: 1;
 }
 
 .details h2 {
-    font-size: 1.5rem;
-    color: #8B0000;
+    font-size: 1.8rem;
+    color: #0d47a1; /* Azul forte */
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .details p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 10px;
 }
@@ -87,6 +98,9 @@ header h1 {
 .details ul {
     list-style: none;
     margin-bottom: 10px;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #333;
 }
 
 .details .icons {
@@ -94,21 +108,32 @@ header h1 {
     gap: 10px;
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #0d47a1; /* Azul forte para os ícones */
 }
 
 .price {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #1565c0; /* Azul intermediário */
+    margin-top: 10px;
 }
 
+/* Botões de ação */
 .info-btn {
-    padding: 10px;
-    background-color: #8B0000;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul nos botões */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
     margin-top: 10px;
+}
+
+.info-btn:hover {
+    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
+    transform: scale(1.05); /* Leve crescimento no hover */
 }

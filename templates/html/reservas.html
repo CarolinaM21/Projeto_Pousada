@@ -22,13 +22,6 @@
         <label for="data_entrada">Data de Entrada:</label>
         <input type="date" id="data_entrada" name="data_entrada">
         
-        <label for="status">Status:</label>
-        <select id="status" name="status">
-            <option value="">Todos</option>
-            <option value="confirmada">Confirmada</option>
-            <option value="cancelada">Cancelada</option>
-            <option value="concluida">Concluída</option>
-        </select>
         
         <button type="submit">Filtrar</button>
     </form>
@@ -43,7 +36,6 @@
                 <th>Id da Acomodação</th>
                 <th>Check-in</th>
                 <th>Check-out</th>
-                <th>Status</th>
                 <th>Valor Total</th>
                 <th>Data da Reserva</th>
             </tr>
@@ -57,7 +49,6 @@
                 <td>{{ reserva.id_acomodacao}}</td>
                 <td>{{ reserva.data_checkin }}</td>
                 <td>{{ reserva.data_checkout }}</td>
-                <td>{{ reserva.status }}</td>
                 <td>{{ reserva.valor_total }}</td>
                 <td>{{ reserva.data_reserva }}</td>
 
