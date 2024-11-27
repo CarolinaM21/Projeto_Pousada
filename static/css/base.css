@@ -1,0 +1,15 @@
+.home-button {
+    position: fixed; /* Fixa o botão na tela */
+    top: 20px;       /* Coloca o botão 20px abaixo do topo da tela */
+    right: 20px;     /* Coloca o botão 20px à direita da tela */
+    z-index: 9999;   /* Garante que o botão fique sobre outros elementos */
+    background-color: transparent; /* Fundo transparente */
+    border: none;    /* Sem borda */
+    padding: 10px;    /* Espaçamento interno ao redor do ícone */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+}
+
+.home-button img {
+    width: 40px; /* Ajuste o tamanho da imagem do botão */
+    height: 40px; /* Ajuste o tamanho da imagem do botão */
+}

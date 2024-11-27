@@ -20,12 +20,13 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     position: fixed;
     height: 100%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
     transition: transform 0.3s;
+
 }
 
 .sidebar:hover {
@@ -57,7 +58,7 @@ body {
 .sidebar-nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1.2em;
+    font-size: 1em;
     display: flex;
     align-items: center;
     padding: 12px 15px;
@@ -79,7 +80,7 @@ body {
 
 /* Conteúdo Principal */
 .main-content {
-    margin-left: 250px;
+    margin-left: 220px;
     padding: 20px;
     flex: 1;
     animation: fadeIn 0.5s ease; /* Animação de entrada */

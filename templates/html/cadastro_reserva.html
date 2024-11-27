@@ -8,6 +8,11 @@
     <title>Cadastro de Reserva</title>
 </head>
 <body>
+    {% extends "base.html" %}
+
+    {% block title %}Cadastro de Reserva{% endblock %}
+    
+    {% block content %}
     <div class="form-container">
         <h1>Cadastro de Reserva</h1>
         <form method="POST" action="/cadastro_reserva">
@@ -44,5 +49,6 @@
             <button type="submit">Salvar Reserva</button>
         </form>
     </div>
+    {% endblock %}
 </body>
 </html>

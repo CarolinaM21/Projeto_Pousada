@@ -75,9 +75,15 @@ table td:nth-child(1) {
     text-align: left;
 }
 
+table th:nth-child(2), /* CPF */
+table td:nth-child(2) {
+    min-width: 150px; /* Garantir que o CPF não seja cortado */
+    white-space: nowrap;
+}
+
 table th:nth-child(3), /* Telefone */
 table td:nth-child(3) {
-    min-width: 130px; /* Ajuste para evitar quebra */
+    min-width: 150px; /* Ajuste para evitar quebra */
     white-space: nowrap; /* Evita quebra de linha */
 }
 

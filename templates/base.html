@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Minha Pousada{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Botão Voltar para Home -->
+        <a href="{{ url_for('home') }}" class="home-button">
+            <img src="{{ url_for('static', filename='images/home-button.png') }}" alt="Voltar para a Home">
+        </a>
+
+        <!-- Bloco de conteúdo da página específica -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

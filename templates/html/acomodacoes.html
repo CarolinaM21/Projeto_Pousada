@@ -8,10 +8,14 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
+    {% extends "base.html" %}
 
+    {% block title %}Acomodações da Pousada{% endblock %}
+    
+    {% block content %}
 <div class="container">
     <header>
-        <h1>Nossas acomodações</h1>
+        <h1>Acomodações</h1>
     </header>
 
     <section class="accommodation">
@@ -30,7 +34,6 @@
                     <span>🍴</span>
                 </div>
                 <div class="price">A partir de <strong>R$590</strong></div>
-                <button class="info-btn">Mais Informações</button>
                 <!-- Formulário de Simulação -->
                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Domo', 'R$590')">
                     <label for="checkin">Check-in</label>
@@ -68,7 +71,6 @@
                     <span>🍴</span>
                 </div>
                 <div class="price">A partir de <strong>R$490</strong></div>
-                <button class="info-btn">Mais Informações</button>
                 <!-- Formulário de Simulação -->
                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Charrua', 'R$490')">
                     <label for="checkin">Check-in</label>
@@ -107,7 +109,6 @@
                     <span>🍴</span>
                 </div>
                 <div class="price">A partir de <strong>R$590</strong></div>
-                <button class="info-btn">Mais Informações</button>
                 <!-- Formulário de Simulação -->
                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Chalé Família', 'R$590')">
                     <label for="checkin">Check-in</label>
@@ -134,7 +135,6 @@
             <img src="{{ url_for('static', filename='images/cabana1.jpeg') }}" alt="Cabana">
             <div class="details">
                 <h2>Cabana</h2>
-                <p>Obs: Os valores exibidos no site estão sujeitos a constantes atualizações.</p>
                 <ul>
                     <li>Camas: 1 Casal</li>
                 </ul>
@@ -146,7 +146,6 @@
                     <span>🍴</span>
                 </div>
                 <div class="price">A partir de <strong>R$590</strong></div>
-                <button class="info-btn">Mais Informações</button>
                 <!-- Formulário de Simulação -->
                 <form class="booking-form" onsubmit="return simulateBooking(event, 'Cabana', 'R$590')">
                     <label for="checkin">Check-in</label>
@@ -170,10 +169,10 @@
         </div>
     </section>
 </div>
+{% endblock %}
 
 <script>
     function simulateBooking(event, acomodacao, preco) {
-        // Código JavaScript já fornecido para simulação
     }
 </script>
 </body>
