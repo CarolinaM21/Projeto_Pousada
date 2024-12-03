@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/administrador.css') }}">
+    <title>Sistema de Gerenciamento - Pousada Quinta do Ypuã</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Ícones do Font Awesome -->
 </head>
 <body>
-    <div class="container">
-        <button class="back-button" onclick="window.location.href='index.html'">Voltar para a página inicial</button>
-        <h2>Painel de Controle</h2>
 
-        <div class="main-section">
-            <div class="grid-container">
-                <a href="agenda_geral.html" class="btn-control-panel">Agenda Geral</a>
-                <a href="area_finan_funcionario.html" class="btn-control-panel">Área Financeiro Funcionário</a>
-                <a href="cadastro_reseva.html" class="btn-control-panel">Cadastro de Reserva</a>
-                <a href="cadastro_hospede.html" class="btn-control-panel">Cadastro de Hóspede</a>
-                <a href="gerenciamento_hospedes.html" class="btn-control-panel">Gerenciamento de Hóspede</a>
-            </div>
-        </div>
-    </div>
+    <!-- Barra Lateral de Navegação -->
+    <aside class="sidebar">
+        <div class="logo">Pousada <span>Quinta do Ypuã</span></div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="{{ url_for('acomodacoes') }}"><i class="fas fa-bed"></i> Acomodações</a></li>
+                <li><a href="{{ url_for('listar_reservas') }}"><i class="fas fa-calendar-check"></i> Gerenciamento de Reservas</a></li>
+                <li><a href="{{ url_for('listar_hospedes') }}"><i class="fas fa-user"></i> Gerenciamento de Hóspedes</a></li>
+                <li><a href="{{ url_for('funcionarios') }}"><i class="fas fa-users"></i> Funcionários</a></li>
+                <li><a href="{{ url_for('agenda_geral') }}"><i class="fas fa-calendar-alt"></i> Agenda Geral</a></li>
+                <li><a href="{{ url_for('area_financeira_funcionario') }}"><i class="fas fa-chart-line"></i> Financeiro</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Bem-vindo ao Sistema de Gerenciamento da Pousada Quinta do Ypuã</h1>
+            <p>Use o menu lateral para navegar pelas funcionalidades do sistema.</p>
+        </header>
+    </main>
+
 </body>
 </html>
