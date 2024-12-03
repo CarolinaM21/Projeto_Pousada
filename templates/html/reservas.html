@@ -9,6 +9,12 @@
 
 </head>
 <body>
+    {% extends "base.html" %}
+
+    {% block title %}Reservas{% endblock %}
+    
+    {% block content %}
+
     <h1>Listagem de Reservas</h1>
 
     <!-- Botão para adicionar nova reserva -->
@@ -47,15 +53,16 @@
                 <td>{{ reserva.id_hospede }}</td>
                 <td>{{ reserva.nome_hospede }}</td>
                 <td>{{ reserva.id_acomodacao}}</td>
-                <td>{{ reserva.data_checkin }}</td>
-                <td>{{ reserva.data_checkout }}</td>
+                <td>{{ reserva.data_checkin | datetimeformat }}</td>
+                <td>{{ reserva.data_checkout | datetimeformat }}</td>
                 <td>{{ reserva.valor_total }}</td>
-                <td>{{ reserva.data_reserva }}</td>
-
+                <td>{{ reserva.data_reserva | datetimeformat }}</td>
 
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </body>
+{% endblock %}
+
 </html>

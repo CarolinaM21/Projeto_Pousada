@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +5,25 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
-    background-color: #f0f4f9; /* Fundo claro */
-    color: #333; /* Texto padrão escuro */
+    font-family: 'Poppins', Arial, sans-serif; 
+    background-color: #f0f4f9; 
+    color: #333; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Container do formulário */
 .form-container {
-    background-color: #ffffff; /* Fundo branco do formulário */
+    background-color: #ffffff; 
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
     width: 400px;
-    border: 3px solid #0d47a1; /* Borda azul forte */
-    animation: fadeIn 0.5s ease; /* Animação de entrada */
+    border: 3px solid #0d47a1; 
+    animation: fadeIn 0.5s ease; 
 }
 
-/* Animação para o formulário */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -41,68 +38,67 @@ body {
 h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #0d47a1; /* Título em azul forte */
+    color: #0d47a1; 
     text-align: center;
     font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil no título */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaçamento entre os elementos */
+    gap: 15px; 
 }
 
 label {
     font-size: 14px;
-    color: #333; /* Texto dos labels */
+    color: #333; 
     font-weight: bold;
 }
 
 input {
     padding: 12px;
     font-size: 14px;
-    border: 1px solid #ccc; /* Borda cinza suave */
+    border: 1px solid #ccc; 
     border-radius: 8px;
-    background-color: #f9f9f9; /* Fundo claro */
-    color: #333; /* Texto escuro */
+    background-color: #f9f9f9;
+    color: #333;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
     outline: none;
-    border-color: #0d47a1; /* Realce azul forte no foco */
-    box-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Sombra ao focar */
+    border-color: #0d47a1; 
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.3); 
 }
 
-/* Botão do formulário */
 button {
     padding: 12px;
     font-size: 16px;
     font-weight: bold;
-    color: #ffffff; /* Texto branco */
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    color: #ffffff; 
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     border: none;
-    border-radius: 25px; /* Bordas arredondadas modernas */
+    border-radius: 25px; 
     cursor: pointer;
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra no botão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 button:hover {
-    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve aumento no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    background: linear-gradient(90deg, #002171, #1565c0); 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 button:active {
-    transform: scale(0.98); /* Efeito de clique */
+    transform: scale(0.98); 
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .form-container {
-        width: 90%; /* Ajuste de largura em telas menores */
+        width: 90%; 
         padding: 20px;
     }
 

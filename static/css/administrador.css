@@ -59,7 +59,6 @@ h2 {
     flex-wrap: wrap;
 }
 
-/* Grid de botões do Painel de Controle */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

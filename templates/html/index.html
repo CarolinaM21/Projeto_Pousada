@@ -9,6 +9,13 @@
 </head>
 <body>
     <div class="container">
+        {% extends "base.html" %}
+        {% block title %}Lista de Hóspedes{% endblock %}
+
+        {% block content %}
+
+        <a href="{{ url_for('cadastro') }}" class="add-link">Adicionar Novo Hóspede</a>
+        
         <h1>Lista de Hóspedes</h1>
         <table>
             <thead>
@@ -28,13 +35,15 @@
                         <td>{{ hospede['cpf'] }}</td>
                         <td>{{ hospede['telefone'] }}</td>
                         <td>{{ hospede['email'] }}</td>
-                        <td>{{ hospede['data_nascimento'] }}</td>
-                        <td>{{ hospede['data_registro'] }}</td>
+                        <td>{{ hospede['data_nascimento'] | datetimeformat }}</td>
+                        <td>{{ hospede['data_registro'] | datetimeformat }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{{ url_for('cadastro') }}" class="add-link">Adicionar Novo Hóspede</a>
+          <a href="{{ url_for('cadastro') }}" class="add-link">Adicionar Novo Hóspede</a>
+          {% endblock %}
+
     </div>
 </body>
 </html>
