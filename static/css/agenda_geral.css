@@ -23,10 +23,9 @@ body {
     width: 90%;
     max-width: 1000px;
     padding: 20px;
-    animation: fadeIn 0.5s ease; /* Animação de entrada */
+    animation: fadeIn 0.5s ease; 
 }
 
-/* Animação de entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -47,14 +46,14 @@ header {
 
 header h1 {
     font-size: 1.8rem;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .btn-add-event {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -67,8 +66,8 @@ header h1 {
 }
 
 .btn-add-event:hover {
-    background: linear-gradient(90deg, #002171, #0d47a1); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve aumento no hover */
+    background: linear-gradient(90deg, #002171, #0d47a1); 
+    transform: scale(1.05); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -82,7 +81,7 @@ header h1 {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     margin-bottom: 10px;
 }
 
@@ -96,10 +95,9 @@ header h1 {
 }
 
 .nav-btn:hover {
-    color: #1e88e5; /* Azul mais claro no hover */
+    color: #1e88e5; 
 }
 
-/* Estilização da tabela do calendário */
 .calendar-table {
     width: 100%;
     border-collapse: collapse;
@@ -114,11 +112,11 @@ header h1 {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 1px solid #ddd; /* Bordas claras */
+    border: 1px solid #ddd; 
 }
 
 .calendar-table th {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
@@ -126,24 +124,23 @@ header h1 {
 }
 
 .calendar-table td.event {
-    background-color: #e3f2fd; /* Azul claro para eventos */
+    background-color: #e3f2fd; 
     border-radius: 50%;
-    color: #0d47a1; /* Texto azul */
+    color: #0d47a1; 
     font-weight: bold;
 }
 
 .calendar-table td:hover {
-    background-color: #bbdefb; /* Azul mais claro no hover */
+    background-color: #bbdefb; 
 }
 
 .calendar-table td.selected {
-    background-color: #1e88e5; /* Azul mais forte para o selecionado */
+    background-color: #1e88e5; 
     color: #ffffff;
     font-weight: bold;
     border-radius: 50%;
 }
 
-/* Legenda */
 .legend {
     display: flex;
     justify-content: center;
@@ -167,17 +164,17 @@ header h1 {
 }
 
 .update-meeting {
-    background-color: #e3f2fd; /* Azul claro */
+    background-color: #e3f2fd; 
 }
 
 .employee-committee {
-    background-color: #fce4ec; /* Rosa claro */
+    background-color: #fce4ec; 
 }
 
 .general-meeting {
-    background-color: #fff9c4; /* Amarelo claro */
+    background-color: #fff9c4; 
 }
 
 .vacation {
-    background-color: #a5d6a7; /* Verde claro */
+    background-color: #a5d6a7; 
 }

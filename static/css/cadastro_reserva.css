@@ -1,15 +1,13 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Configuração geral do corpo */
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
-    background-color: #f0f4f9; /* Fundo claro e suave */
-    color: #333; /* Texto escuro para contraste */
+    font-family: 'Poppins', Arial, sans-serif; 
+    background-color: #f0f4f9;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,19 +15,17 @@ body {
     padding: 20px;
 }
 
-/* Estilo principal do container */
 .form-container {
-    background: linear-gradient(145deg, #ffffff, #e3f2fd); /* Gradiente sutil para o fundo */
-    border: 2px solid #0d47a1; /* Borda azul forte */
-    border-radius: 12px; /* Cantos arredondados */
+    background: linear-gradient(145deg, #ffffff, #e3f2fd); 
+    border: 2px solid #0d47a1; 
+    border-radius: 12px; 
     padding: 30px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombras para profundidade */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
     width: 100%;
-    max-width: 500px; /* Limita o tamanho do formulário */
-    animation: fadeIn 0.5s ease; /* Animação de entrada */
+    max-width: 500px;
+    animation: fadeIn 0.5s ease; 
 }
 
-/* Animação para suavizar entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -41,83 +37,76 @@ body {
     }
 }
 
-/* Estilo do título */
 h1 {
     font-size: 26px;
     text-align: center;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     margin-bottom: 20px;
     text-transform: uppercase;
-    border-bottom: 2px solid #0d47a1; /* Linha decorativa abaixo do título */
+    border-bottom: 2px solid #0d47a1; 
     padding-bottom: 10px;
     letter-spacing: 1px;
     font-weight: 700;
 }
 
-/* Estilo geral do formulário */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaçamento entre os elementos do formulário */
+    gap: 15px; 
 }
 
-/* Estilo dos rótulos (labels) */
 label {
     font-size: 14px;
     font-weight: bold;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
 }
 
-/* Estilo dos campos de entrada */
 input, select {
     padding: 12px;
     font-size: 14px;
-    border: 1px solid #ccc; /* Bordas padrão cinza */
-    border-radius: 25px; /* Bordas arredondadas modernas */
-    background-color: #f9f9f9; /* Fundo claro */
+    border: 1px solid #ccc; 
+    border-radius: 25px; 
+    background-color: #f9f9f9; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito de foco nos campos */
 input:focus, select:focus {
     outline: none;
-    border-color: #0d47a1; /* Destaca a borda ao focar */
+    border-color: #0d47a1; /*
     box-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Sombra azul ao focar */
 }
 
-/* Estilo para o botão */
 button {
     padding: 12px;
     font-size: 16px;
     font-weight: bold;
-    color: #ffffff; /* Texto branco */
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul moderno */
+    color: #ffffff; 
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     border: none;
-    border-radius: 25px; /* Bordas arredondadas */
+    border-radius: 25px; 
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 /* Efeito de hover no botão */
 button:hover {
-    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve aumento no tamanho */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Intensificação da sombra */
+    background: linear-gradient(90deg, #002171, #1565c0); 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Alinhar links ou elementos extras */
 .link {
     text-align: center;
     margin-top: 10px;
     font-size: 14px;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     text-decoration: none;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .link:hover {
-    color: #1565c0; /* Azul intermediário no hover */
-    text-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Efeito de brilho */
+    color: #1565c0; 
+    text-shadow: 0 0 5px rgba(13, 71, 161, 0.3); 
     text-decoration: underline;
 }

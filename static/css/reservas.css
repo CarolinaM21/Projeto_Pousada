@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +5,23 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Fonte padronizada */
-    background-color: #f0f4f9; /* Fundo claro e suave */
-    color: #333; /* Texto escuro */
+    font-family: 'Poppins', Arial, sans-serif; 
+    background-color: #f0f4f9; 
+    color: #333; 
     padding: 20px;
 }
 
 h1 {
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     text-align: center;
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra no título */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
-/* Botão padrão */
 .button {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul moderno */
-    color: #fff;
+    background: linear-gradient(90deg, #ffffff, #1e88e5); 
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 25px;
@@ -33,15 +30,14 @@ h1 {
     font-weight: bold;
     text-align: center;
     transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .button:hover {
-    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve crescimento no hover */
+    background: linear-gradient(90deg, #ffffff, #1565c0); 
+    transform: scale(1.05); 
 }
 
-/* Formulário de filtro */
 .filter-form {
     display: flex;
     gap: 10px;
@@ -63,7 +59,7 @@ h1 {
 }
 
 .filter-form input:focus, .filter-form select:focus {
-    border-color: #0d47a1; /* Azul forte no foco */
+    border-color: #0d47a1; 
     box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
 }
 
@@ -84,13 +80,12 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Tabela de Reservas */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para tabela */
-    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
     overflow: hidden;
 }
 
@@ -102,7 +97,7 @@ table th, table td {
 }
 
 table th {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente no cabeçalho */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
@@ -110,17 +105,16 @@ table th {
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f7fc; /* Fundo claro alternado */
+    background-color: #f2f7fc;
 }
 
 table tr:hover {
-    background-color: #e3f2fd; /* Azul claro no hover */
-    transform: scale(1.01); /* Leve crescimento */
+    background-color: #e3f2fd; 
+    transform: scale(1.01);
 }
 
-/* Links de ação (editar e cancelar) */
 table a {
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     font-weight: bold;
     text-decoration: none;
     margin: 0 5px;
@@ -128,14 +122,13 @@ table a {
 }
 
 table a:hover {
-    color: #1565c0; /* Azul mais escuro no hover */
-    text-shadow: 0 0 3px rgba(13, 71, 161, 0.3); /* Efeito de brilho */
+    color: #1565c0; 
+    text-shadow: 0 0 3px rgba(13, 71, 161, 0.3); 
     text-decoration: underline;
 }
 
-/* Mensagens de erro e sucesso */
 .error-message {
-    color: #d32f2f; /* Vermelho para mensagens de erro */
+    color: #d32f2f; 
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
@@ -143,8 +136,7 @@ table a:hover {
 }
 
 .success-message {
-    color: #388e3c; /* Verde para mensagens de sucesso */
-    font-weight: bold;
+    color: #388e3c; 
     text-align: center;
     margin-top: 10px;
     font-size: 1.1em;
@@ -159,12 +151,12 @@ table a:hover {
 }
 
 .login-footer a {
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .login-footer a:hover {
-    color: #1565c0; /* Azul mais escuro no hover */
+    color: #1565c0; 
     text-decoration: underline;
 }

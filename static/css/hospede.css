@@ -6,120 +6,121 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
-    background-color: #f0f4f9; /* Fundo claro */
-    color: #333; /* Texto padrão */
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f0f4f9;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 h1 {
     text-align: center;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     margin-top: 20px;
-    font-size: 2.5rem; /* Título destacado */
+    font-size: 2.5rem; 
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil no título */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
 .container {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
 }
 
-/* Tabela de listagem */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
-    font-size: 0.9rem; /* Fonte ajustada */
-    background-color: #ffffff; /* Fundo branco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 table th,
 table td {
-    padding: 12px; /* Espaçamento consistente */
+    padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: center;
     vertical-align: middle;
 }
 
 table th {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5);
     color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem; /* Fonte do cabeçalho */
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
 
 table tr:nth-child(even) {
-    background-color: #f7f9fc; /* Fundo alternado */
+    background-color: #f7f9fc;
 }
 
 table tr:hover {
-    background-color: #e3f2fd; /* Realce no hover */
+    background-color: #e3f2fd;
     transition: background-color 0.3s ease;
 }
 
-/* Ajustes para colunas específicas */
-table th:nth-child(1), /* Nome */
+table th:nth-child(1),
 table td:nth-child(1) {
     min-width: 150px;
     text-align: left;
 }
 
-table th:nth-child(2), /* CPF */
+table th:nth-child(2),
 table td:nth-child(2) {
-    min-width: 150px; /* Garantir que o CPF não seja cortado */
+    min-width: 100px;
     white-space: nowrap;
 }
 
-table th:nth-child(3), /* Telefone */
+table th:nth-child(3),
 table td:nth-child(3) {
-    min-width: 150px; /* Ajuste para evitar quebra */
-    white-space: nowrap; /* Evita quebra de linha */
+    min-width: 100px;
+    white-space: nowrap;
 }
 
-table th:nth-child(4), /* Email */
+table th:nth-child(4),
 table td:nth-child(4) {
     text-align: left;
-    min-width: 200px; /* Largura mínima para acomodar emails longos */
+    min-width: 200px;
 }
 
-/* Botão de adicionar */
+
 .add-link {
     display: inline-block;
-    margin-top: 20px;
+    margin: 20px 0; 
     padding: 12px 20px;
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5);
     color: #ffffff;
-    border-radius: 25px; /* Botão com bordas arredondadas */
+    border-radius: 25px;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
     font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra no botão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .add-link:hover {
-    background: linear-gradient(90deg, #002171, #0d47a1); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve aumento no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    background: linear-gradient(90deg, #002171, #0d47a1);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
-        overflow-x: auto; /* Rolagem horizontal em telas menores */
+        overflow-x: auto;
     }
 
     table th,
@@ -128,6 +129,6 @@ table td:nth-child(4) {
     }
 
     h1 {
-        font-size: 1.8rem; /* Ajuste do título em telas menores */
+        font-size: 1.8rem;
     }
 }

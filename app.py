@@ -4,73 +4,58 @@ import os
 from datetime import datetime
 import re
 
-
 app = Flask(__name__)
-app.secret_key = 'batata' 
+app.secret_key = 'batata'
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 DB_PATH = os.path.join(BASE_DIR, 'pousada_ypua.db')
 
-from flask import Flask, render_template
-from datetime import datetime
-
-# Definindo o filtro de data
 @app.template_filter('datetimeformat')
 def datetimeformat(value):
-    if isinstance(value, str):  # Se for uma string de data
+    if isinstance(value, str):
         try:
+            date_part = value.split(' ')[0]
             return datetime.strptime(value, '%Y-%m-%d').strftime('%d/%m/%Y')
         except ValueError:
-            return value  # Se não for possível converter, retorna o valor original
-    elif isinstance(value, datetime.date):  # Se for um objeto datetime.date
-        return value.strftime('%d/%m/%Y')  # Formata diretamente
-    return value  # Se não for string nem date, retorna o valor original
+            return value
+    elif isinstance(value, datetime.date):
+        return value.strftime('%d/%m/%Y')
+    return value
 
-#obtem conexão com o banco de dados
 def get_db_connection():
     try:
         conn = sqlite3.connect(DB_PATH)
-        conn.row_factory = sqlite3.Row  
+        conn.row_factory = sqlite3.Row
         return conn
     except sqlite3.Error as e:
         print(f"Erro ao conectar ao banco de dados: {e}")
         return None
 
-#página inicial - redireciona para a tela de login
 @app.route('/')
 def index():
     return redirect(url_for('login'))
 
-#tela de login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
-        #verifica as credenciais no banco de dados
         conn = get_db_connection()
         user = conn.execute('SELECT * FROM usuarios WHERE nome_usuario = ? AND senha = ?', (username, password)).fetchone()
         conn.close()
-
         if user:
             session['username'] = username
             return redirect(url_for('home'))
         else:
             flash("Usuário ou senha incorretos.", "error")
-    
-    #renderiza a página de login para GET ou após tentativa incorreta de login
     return render_template('html/login.html')
 
-#página inicial de hóspedes (exemplo de redirecionamento após login)
 @app.route('/home')
 def home():
     if 'username' not in session:
         return redirect(url_for('login'))
     return render_template('html/home.html')
 
-#página de listagem de hóspedes
 @app.route('/hospedes')
 def listar_hospedes():
     conn = get_db_connection()
@@ -79,7 +64,6 @@ def listar_hospedes():
         conn.close()
     return render_template('html/index.html', hospedes=hospedes)
 
-#página de cadastro de hóspede 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
@@ -88,10 +72,8 @@ def cadastro():
         telefone = request.form['telefone']
         email = request.form['email']
         data_nascimento = request.form['data_nascimento']
-     # Formata o telefone para o formato (XX) XXXXX-XXXX
         telefone = formatar_telefone(telefone)
 
-        # Verifica se o telefone está no formato correto
         if not re.match(r'^\(\d{2}\) \d{5}-\d{4}$', telefone):
             flash("Telefone inválido! O formato correto é (XX) XXXXX-XXXX.", "error")
             return redirect(url_for('cadastro'))
@@ -107,20 +89,16 @@ def cadastro():
 
     return render_template('html/cadastro_hospede.html')
 
-# Função para formatar o telefone
 def formatar_telefone(telefone):
-    # Remove tudo que não é número
     telefone = re.sub(r'\D', '', telefone)
     
-    # Formata o telefone com DDD
-    if len(telefone) == 11:  # Para números com DDD e 9 dígitos
+    if len(telefone) == 11:  
         return f"({telefone[:2]}) {telefone[2:7]}-{telefone[7:]}"
-    elif len(telefone) == 10:  # Para números com DDD e 8 dígitos
+    elif len(telefone) == 10:  
         return f"({telefone[:2]}) {telefone[2:6]}-{telefone[6:]}"
     else:
-        return telefone  # Retorna o valor sem formatação se não for válido
+        return telefone  
 
-#página de listagem de reservas 
 @app.route('/reservas')
 def listar_reservas():
     conn = get_db_connection()
@@ -141,12 +119,6 @@ def listar_reservas():
 
     return render_template('html/reservas.html', reservas=reservas)
 
-from datetime import datetime
-from flask import Flask, render_template
-
-from datetime import datetime
-
-
 @app.route('/cadastro_reserva', methods=['GET', 'POST'])
 def cadastro_reserva():
     if request.method == 'POST':
@@ -156,23 +128,45 @@ def cadastro_reserva():
         data_checkout = request.form['data_checkout']
         valor_total = request.form['valor_total']
 
+        try:
+            valor_total = float(valor_total)
+        except ValueError:
+            valor_total = 0.0  
+
+        data_checkin = datetime.strptime(data_checkin, '%Y-%m-%d').date()
+        data_checkout = datetime.strptime(data_checkout, '%Y-%m-%d').date()
+
+        dias = (data_checkout - data_checkin).days
+
+        if dias <= 0:
+            return "Erro: Data de check-out deve ser posterior à data de check-in", 400
+        
         conn = get_db_connection()
+        acomodacao = conn.execute('SELECT preco_diaria FROM acomodacoes WHERE id_acomodacao = ?', (id_acomodacao,)).fetchone()
+        
+        if acomodacao:
+            preco_diaria = acomodacao['preco_diaria']
+            valor_total_calculado = preco_diaria * dias  
+        else:
+            valor_total_calculado = 0.0  
+
+        if valor_total == 0.0:
+            valor_total = valor_total_calculado
+
         if conn:
             conn.execute('''
                 INSERT INTO reservas 
-                (id_hospede, id_acomodacao, data_checkin, data_checkout, status, valor_total, data_reserva)
-                VALUES (?, ?, ?, ?, ?, ?, DATE('now'))
+                (id_hospede, id_acomodacao, data_checkin, data_checkout, valor_total, data_reserva)
+                VALUES (?, ?, ?, ?, ?, DATE('now'))
             ''', (id_hospede, id_acomodacao, data_checkin, data_checkout, valor_total))
             conn.commit()
             conn.close()
 
-        #redireciona para a listagem de reservas após o cadastro
         return redirect(url_for('listar_reservas'))
 
-    #para GET, exibe o formulário
     conn = get_db_connection()
     hospedes = conn.execute('SELECT * FROM hospedes').fetchall() if conn else []
-    acomodacoes = conn.execute('SELECT id_acomodacao, nomes FROM acomodacoes').fetchall() if conn else []
+    acomodacoes = conn.execute('SELECT id_acomodacao, nomes, preco_diaria FROM acomodacoes').fetchall() if conn else []
     conn.close()
     return render_template('html/cadastro_reserva.html', hospedes=hospedes, acomodacoes=acomodacoes)
 
@@ -184,10 +178,24 @@ def funcionarios():
     conn.close()
     return render_template('html/funcionarios.html', funcionarios=funcionarios)
 
-#rotas para outras páginas com uso de url_for para links de rotas
 @app.route('/acomodacoes')
 def acomodacoes():
-    return render_template('html/acomodacoes.html')
+    checkin = request.args.get('checkin') 
+    checkout = request.args.get('checkout')  
+    adults = request.args.get('adults')
+
+    app.logger.info(f"Parâmetros recebidos: checkin={checkin}, checkout={checkout}, adults={adults}")
+
+    if checkin and checkout:
+        try:
+            checkin_date = datetime.strptime(checkin, '%Y-%m-%d')
+            checkout_date = datetime.strptime(checkout, '%Y-%m-%d')
+            days = (checkout_date - checkin_date).days
+            app.logger.info(f"Acomodações para {days} dias entre {checkin_date} e {checkout_date}")
+        except ValueError:
+            app.logger.error("Erro ao processar as datas.")
+    
+    return render_template('html/acomodacoes.html', checkin=checkin, checkout=checkout, adults=adults)
 
 @app.route('/add')
 def add():
@@ -221,12 +229,10 @@ def privacidade():
 def servico():
     return render_template('html/serviço.html')
 
-# Página de logout para finalizar a sessão do usuário
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
 
-# Executando o aplicativo
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +5,26 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
-    background-color: #f0f4f9; /* Fundo claro */
-    color: #333; /* Texto padrão escuro */
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f0f4f9;
+    color: #333; 
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px; /* Ajuste para dispositivos menores */
+    padding: 20px; 
 }
 
 .container {
     width: 90%;
     max-width: 1000px;
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff; 
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    animation: fadeIn 0.5s ease; /* Animação de entrada */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.5s ease; 
 }
 
-/* Animação para o container */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -47,45 +45,42 @@ body {
 
 .header h1 {
     font-size: 2rem;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra no título */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
-/* Botão adicionar funcionário */
 .btn-add {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     color: #ffffff;
     border: none;
     padding: 12px 20px;
-    border-radius: 25px; /* Botão com bordas arredondadas */
+    border-radius: 25px; 
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve no botão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-add:hover {
-    background: linear-gradient(90deg, #002171, #0d47a1); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve aumento no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    background: linear-gradient(90deg, #002171, #0d47a1); 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
-/* Tabela de listagem */
 .table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
-    font-size: 0.9rem; /* Tamanho da fonte ajustado */
-    background-color: #ffffff; /* Fundo branco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
+    font-size: 0.9rem; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
 }
 
 .table thead {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
-    color: #ffffff;
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
 }
 
 .table th, 
@@ -97,15 +92,14 @@ body {
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #f7f9fc; /* Fundo alternado */
+    background-color: #f7f9fc; 
 }
 
 .table tbody tr:hover {
-    background-color: #e3f2fd; /* Realce no hover */
+    background-color: #e3f2fd; 
     transition: background-color 0.3s ease;
 }
 
-/* Botões de ação (editar e excluir) */
 .btn-edit, .btn-delete {
     border: none;
     background: none;
@@ -117,28 +111,28 @@ body {
 }
 
 .btn-edit:hover {
-    color: #4caf50; /* Verde para edição */
-    transform: scale(1.1); /* Leve crescimento no hover */
+    color: #4caf50; 
+    transform: scale(1.1); 
 }
 
 .btn-delete:hover {
-    color: #e53935; /* Vermelho para exclusão */
-    transform: scale(1.1); /* Leve crescimento no hover */
+    color: #e53935; 
+    transform: scale(1.1); 
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;
-        overflow-x: auto; /* Permite rolagem horizontal em telas menores */
+        overflow-x: auto; 
     }
 
     .header h1 {
-        font-size: 1.8rem; /* Ajuste do título em telas menores */
+        font-size: 1.8rem; 
     }
 
     .btn-add {
-        font-size: 0.9rem; /* Botão menor para telas pequenas */
+        font-size: 0.9rem; 
         padding: 10px 15px;
     }
 

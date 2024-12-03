@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; /* Fonte moderna */
-    background-color: #f0f4f9; /* Fundo claro */
-    color: #333; /* Texto padrão */
+    font-family: 'Poppins', Arial, sans-serif; 
+    background-color: #f0f4f9; 
+    color: #333; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -17,21 +17,20 @@ body {
     min-height: 100vh;
 }
 
-/* Contêiner principal */
 .container {
     display: flex;
     width: 90%;
     max-width: 1200px;
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff; 
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
     width: 30%;
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     padding: 20px;
     color: #ffffff;
 }
@@ -40,7 +39,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 20px;
     font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
 }
 
 .sidebar .info p {
@@ -50,23 +49,21 @@ body {
 }
 
 .sidebar .event-box {
-    background-color: #ffffff; /* Fundo branco */
+    background-color: #ffffff; 
     padding: 15px;
     border-radius: 8px;
     border: none;
-    color: #0d47a1; /* Azul escuro */
-    font-weight: bold;
+    color: #0d47a1;
     margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s, box-shadow 0.3s ease;
 }
 
 .sidebar .event-box:hover {
-    transform: scale(1.05); /* Leve aumento no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
-/* Conteúdo principal */
 .main {
     width: 70%;
     padding: 20px;
@@ -85,8 +82,8 @@ body {
 }
 
 .grid-item {
-    background: linear-gradient(145deg, #7cb9ef, #1e88e5); /* Gradiente suave laranja */
-    color: #333; /* Texto escuro */
+    background: linear-gradient(145deg, #7cb9ef, #1e88e5); 
+    color: #333; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,19 +92,18 @@ body {
     border-radius: 12px;
     font-size: 1.2rem;
     font-weight: 700;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     text-align: center;
 }
 
 .grid-item:hover {
-    transform: translateY(-5px); /* Elevação no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
-    background: linear-gradient(145deg, #0d47a1, #1e88e5); /* Gradiente mais escuro no hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    background: linear-gradient(145deg, #0d47a1, #1e88e5); 
 }
 
-/* Legenda para os botões */
 .grid-item span {
     font-size: 0.9rem;
     color: #666;
@@ -115,11 +111,11 @@ body {
     font-weight: 400;
 }
 
-/* Botão */
+
 .button {
     margin-top: 20px;
     padding: 10px 20px;
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente azul */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     color: #ffffff;
     border: none;
     border-radius: 25px;
@@ -127,15 +123,14 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .button:hover {
-    background: linear-gradient(90deg, #002171, #0d47a1); /* Gradiente mais escuro no hover */
-    transform: scale(1.05); /* Leve aumento no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+    background: linear-gradient(90deg, #002171, #0d47a1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .button:active {
-    transform: scale(0.98); /* Efeito de clique */
+    transform: scale(0.98); 
 }

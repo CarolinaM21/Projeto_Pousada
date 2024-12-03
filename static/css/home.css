@@ -1,4 +1,3 @@
-/* Reset de margens e padding */
 * {
     margin: 0;
     padding: 0;
@@ -9,14 +8,12 @@ body {
     display: flex;
     font-family: 'Poppins', Arial, sans-serif;
     color: #333;
-    background-color: #f0f4f9; /* Fundo claro e neutro */
-    margin: 0;
+    background-color: #f0f4f9; 
 }
 
-/* Estilos da Barra Lateral */
 .sidebar {
     width: 250px;
-    background: linear-gradient(180deg, #0d47a1, #1565c0); /* Gradiente moderno */
+    background: linear-gradient(180deg, #0d47a1, #1565c0); 
     color: white;
     display: flex;
     flex-direction: column;
@@ -24,13 +21,13 @@ body {
     padding: 20px;
     position: fixed;
     height: 100%;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s;
 
 }
 
 .sidebar:hover {
-    transform: scale(1.01); /* Leve efeito de crescimento ao passar o mouse */
+    transform: scale(1.01); 
 }
 
 .sidebar .logo {
@@ -38,11 +35,11 @@ body {
     font-weight: bold;
     color: white;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de sombra no texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .sidebar .logo span {
-    color: #bbdefb; /* Azul claro */
+    color: #bbdefb; 
 }
 
 .sidebar-nav ul {
@@ -73,20 +70,18 @@ body {
 }
 
 .sidebar-nav ul li a:hover {
-    background-color: #1e88e5; /* Azul intermediário */
+    background-color: #1e88e5; 
     color: white;
-    transform: scale(1.05); /* Leve crescimento no hover */
+    transform: scale(1.05); 
 }
 
-/* Conteúdo Principal */
 .main-content {
     margin-left: 220px;
     padding: 20px;
     flex: 1;
-    animation: fadeIn 0.5s ease; /* Animação de entrada */
+    animation: fadeIn 0.5s ease; 
 }
 
-/* Animação de fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -101,7 +96,7 @@ body {
 .main-header {
     text-align: center;
     margin-bottom: 40px;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1; 
 }
 
 .main-header h1 {
@@ -116,7 +111,6 @@ body {
     font-size: 1.2em;
 }
 
-/* Painel de Resumo */
 .dashboard {
     display: flex;
     gap: 20px;
@@ -125,13 +119,13 @@ body {
 }
 
 .dashboard-item {
-    background: linear-gradient(145deg, #ffffff, #e3f2fd); /* Gradiente no fundo */
+    background: linear-gradient(145deg, #ffffff, #e3f2fd); 
     border: 1px solid #bbdefb;
     padding: 20px;
     border-radius: 12px;
     width: 200px;
     text-align: center;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.5); /* Efeito de profundidade */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.5); 
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -143,7 +137,7 @@ body {
 .dashboard-item h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #0d47a1; /* Azul forte */
+    color: #0d47a1;
 }
 
 .dashboard-item p {
@@ -154,7 +148,7 @@ body {
     display: inline-block;
     margin-top: 15px;
     color: #fff;
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); /* Gradiente no botão */
+    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
     padding: 10px 15px;
     border-radius: 25px;
     text-decoration: none;
@@ -164,7 +158,7 @@ body {
 }
 
 .btn-details:hover {
-    background: linear-gradient(90deg, #002171, #1565c0); /* Gradiente mais escuro no hover */
-    transform: scale(1.1); /* Crescimento no hover */
+    background: linear-gradient(90deg, #002171, #1565c0); 
+    transform: scale(1.1); 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }

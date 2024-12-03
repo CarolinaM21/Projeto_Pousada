@@ -13,6 +13,9 @@
         {% block title %}Lista de Hóspedes{% endblock %}
 
         {% block content %}
+
+        <a href="{{ url_for('cadastro') }}" class="add-link">Adicionar Novo Hóspede</a>
+        
         <h1>Lista de Hóspedes</h1>
         <table>
             <thead>
