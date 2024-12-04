@@ -17,10 +17,8 @@
 
     <h1>Listagem de Reservas</h1>
 
-    <!-- Botão para adicionar nova reserva -->
     <a href="{{ url_for('cadastro_reserva') }}" class="button">Adicionar Reserva</a>
     
-    <!-- Filtros de Busca (Opcional) -->
     <form method="GET" action="{{ url_for('listar_reservas') }}" class="filter-form">
         <label for="nome">Nome do Hóspede:</label>
         <input type="text" id="nome" name="nome">
@@ -32,7 +30,6 @@
         <button type="submit">Filtrar</button>
     </form>
     
-    <!-- Tabela de Reservas -->
     <table>
         <thead>
             <tr>

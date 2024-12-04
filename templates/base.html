@@ -9,12 +9,10 @@
 </head>
 <body>
     <div class="container">
-        <!-- Botão Voltar para Home -->
         <a href="{{ url_for('home') }}" class="home-button">
             <img src="{{ url_for('static', filename='images/home-button.png') }}" alt="Voltar para a Home">
         </a>
 
-        <!-- Bloco de conteúdo da página específica -->
         {% block content %}
         {% endblock %}
     </div>

@@ -20,7 +20,6 @@
         </header>
 
         <div class="reservations" id="reservations">
-            <!-- As reservas serão exibidas aqui -->
         </div>
 
         <button class="new-reservation-btn" onclick="window.location.href='reserva.html'">Cadastrar nova reserva</button>
@@ -31,15 +30,12 @@
     </div>
 
     <script>
-        // Função para carregar e exibir as reservas
         function carregarReservas() {
             const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
             const reservationsContainer = document.getElementById('reservations');
 
-            // Limpa o container antes de exibir as reservas
             reservationsContainer.innerHTML = '';
-
-            // Exibe cada reserva
+           
             reservas.forEach(reserva => {
                 const reservaCard = `
                     <div class="reservation-card">
@@ -55,7 +51,6 @@
             });
         }
 
-        // Carrega as reservas quando a página é carregada
         document.addEventListener('DOMContentLoaded', carregarReservas);
     </script>
 </body>
