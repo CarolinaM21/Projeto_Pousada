@@ -25,8 +25,8 @@ Requisitos do Sistema
 Instalação e Configuração
 
 1. Clone o repositório
-2. Instale as dependências
-   -> pip install flask e o servidor
+2. Instale as dependências e o servidor
+   -> pip install flask 
 3. Inicie o servidor
    -> python app.py (ou Flask run)
 4. Acesse no navegador
