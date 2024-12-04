@@ -9,12 +9,18 @@
 </head>
 <body>
     <div class="calendar-container">
+
+        {% extends "base.html" %}
+
+        {% block title %}Agenda Geral{% endblock %}
+        
+        {% block content %}
+
         <header>
             <h1>Agenda Geral</h1>
         </header>
 
         <section class="calendar-content">
-            <!-- Navegação do mês -->
             <button class="nav-btn">&laquo;</button>
             <div class="month">
                 <h2>Novembro 2024</h2>
@@ -22,7 +28,6 @@
             <button class="nav-btn">&raquo;</button>
         </section>
 
-        <!-- Tabela do calendário -->
         <table class="calendar-table">
             <thead>
                 <tr>
@@ -106,3 +111,4 @@
     </div>
 </body>
 </html>
+        {% endblock %}

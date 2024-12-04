@@ -9,6 +9,13 @@
 </head>
 <body>
     <div class="form-container">
+
+        {% extends "base.html" %}
+
+        {% block title %}Cadastro do Cliente {% endblock %}
+        
+        {% block content %}
+
         <h2>Cadastro do Cliente</h2>
         <form action="{{ url_for('cadastro') }}" method="POST">
             <label for="nome">Nome Completo:</label>
@@ -27,6 +34,9 @@
             <input type="date" id="data_nascimento" name="data_nascimento" required>
 
             <button type="submit">Salvar</button>
+
+            {% endblock %}
+
         </form>
     </div>
 </body>

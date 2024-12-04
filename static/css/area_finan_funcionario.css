@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif; 
-    background-color: #f0f4f9; 
-    color: #333; 
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f0f4f9;
+    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
@@ -17,29 +17,33 @@ body {
     min-height: 100vh;
 }
 
+/* Container Principal */
 .container {
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     max-width: 1200px;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin: 20px;
 }
 
 /* Sidebar */
 .sidebar {
     width: 30%;
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
+    background: linear-gradient(90deg, #0d47a1, #1e88e5);
     padding: 20px;
     color: #ffffff;
+    box-sizing: border-box;
 }
 
 .sidebar h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
     font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar .info p {
@@ -49,19 +53,19 @@ body {
 }
 
 .sidebar .event-box {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 8px;
     border: none;
     color: #0d47a1;
     margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.3s ease;
 }
 
 .sidebar .event-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .main {
@@ -73,7 +77,6 @@ body {
     justify-content: center;
 }
 
-/* Grade */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -82,8 +85,8 @@ body {
 }
 
 .grid-item {
-    background: linear-gradient(145deg, #7cb9ef, #1e88e5); 
-    color: #333; 
+    background: linear-gradient(145deg, #7cb9ef, #1e88e5);
+    color: #333;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,16 +95,16 @@ body {
     border-radius: 12px;
     font-size: 1.2rem;
     font-weight: 700;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease;
     cursor: pointer;
     text-align: center;
 }
 
 .grid-item:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-    background: linear-gradient(145deg, #0d47a1, #1e88e5); 
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #0d47a1, #1e88e5);
 }
 
 .grid-item span {
@@ -111,26 +114,62 @@ body {
     font-weight: 400;
 }
 
-
 .button {
     margin-top: 20px;
     padding: 10px 20px;
-    background: linear-gradient(90deg, #0d47a1, #1e88e5); 
+    background: linear-gradient(90deg, #0d47a1, #1e88e5);
     color: #ffffff;
     border: none;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-    background: linear-gradient(90deg, #002171, #0d47a1); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    background: linear-gradient(90deg, #002171, #0d47a1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .button:active {
-    transform: scale(0.98); 
+    transform: scale(0.98);
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .main {
+        width: 100%;
+    }
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .main {
+        width: 100%;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .grid-item {
+        height: 120px;
+        font-size: 1rem;
+    }
 }

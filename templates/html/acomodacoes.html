@@ -8,157 +8,166 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
+
+<div class="container">
+
     {% extends "base.html" %}
 
-    {% block title %}Acomodações da Pousada{% endblock %}
+        {% block title %}Acomodações{% endblock %}
+        
+        {% block content %}
 
-    {% block content %}
-    <div class="container">
-        <header>
-            <h1>Acomodações</h1>
-        </header>
+    <header>
+        <h1>Nossas acomodações</h1>
+    </header>
 
-        <section class="accommodation">
-            <div class="accommodation-item">
-                <img src="{{ url_for('static', filename='images/domo2.jpeg') }}" alt="Domo">
-                <div class="details">
-                    <h2>Domo</h2>
-                    <ul>
-                        <li>Camas: 1 Casal</li>
-                    </ul>
-                    <div class="icons">
-                        <span>❄️</span>
-                        <span>📶</span>
-                        <span>📺</span>
-                        <span>🍷</span>
-                        <span>🍴</span>
-                    </div>
-                    <div class="price">A partir de <strong>R$150</strong></div>
-
-                    <form class="booking-form" onsubmit="return simulateBooking(event, 'Domo', 590)">
-                        <label for="checkin">Check-in</label>
-                        <input type="date" id="checkin" name="checkin" required>
-
-                        <label for="checkout">Check-out</label>
-                        <input type="date" id="checkout" name="checkout" required>
-
-                        <button type="submit" class="info-btn">Simular reserva</button>
-                        <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
-                    </form>
-                    <div class="booking-result"></div>
+    <section class="accommodation">
+        <div class="accommodation-item">
+            <img src="{{ url_for('static', filename='images/domo2.jpeg') }}" alt="Domo">
+            <div class="details">
+                <h2>Domo</h2>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
                 </div>
-            </div>
+                <div class="price">A partir de <strong>R$590</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                <form class="booking-form" onsubmit="return simulateBooking(event, 'Domo', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
 
-            <div class="accommodation-item">
-                <img src="{{ url_for('static', filename='images/charrua.jpeg') }}" alt="Charrua (Bus)">
-                <div class="details">
-                    <h2>Charrua (Bus)</h2>
-                    <ul>
-                        <li>Camas: 1 Casal</li>
-                    </ul>
-                    <div class="icons">
-                        <span>❄️</span>
-                        <span>📶</span>
-                        <span>📺</span>
-                        <span>🍷</span>
-                        <span>🍴</span>
-                    </div>
-                    <div class="price">A partir de <strong>R$190</strong></div>
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
 
-                    <form class="booking-form" onsubmit="return simulateBooking(event, 'Charrua', 490)">
-                        <label for="checkin">Check-in</label>
-                        <input type="date" id="checkin" name="checkin" required>
-
-                        <label for="checkout">Check-out</label>
-                        <input type="date" id="checkout" name="checkout" required>
-
-                        <label for="adults">Adultos</label>
-                        <select id="adults" name="adults" required>
-                            <option value="1">1 Adulto</option>
-                            <option value="2">2 Adultos</option>
-                            <option value="3">3 Adultos</option>
-                        </select>
-
-                        <button type="submit" class="info-btn">Simular reserva</button>
-                        <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
-                    </form>
-                    <div class="booking-result"></div>
-                </div>
-            </div>
-
-            <div class="accommodation-item">
-                <img src="{{ url_for('static', filename='images/chale_familia.jpg') }}" alt="Chalé Família">
-                <div class="details">
-                    <h2>Chalé Família</h2>
-                    <ul>
-                        <li>Camas: 1 Casal</li>
-                        <li>Camas: 3 Solteiro</li>
-                    </ul>
-                    <div class="icons">
-                        <span>❄️</span>
-                        <span>📶</span>
-                        <span>📺</span>
-                        <span>🍷</span>
-                        <span>🍴</span>
-                    </div>
-                    <div class="price">A partir de <strong>R$290</strong></div>
-
-                    <form class="booking-form" onsubmit="return simulateBooking(event, 'Chalé Família', 590)">
-                        <label for="checkin">Check-in</label>
-                        <input type="date" id="checkin" name="checkin" required>
-
-                        <label for="checkout">Check-out</label>
-                        <input type="date" id="checkout" name="checkout" required>
-
-                        <label for="adults">Adultos</label>
-                        <select id="adults" name="adults" required>
-                            <option value="1">1 Adulto</option>
-                            <option value="2">2 Adultos</option>
-                            <option value="3">3 Adultos</option>
-                        </select>
-
-                        <button type="submit" class="info-btn">Simular reserva</button>
-                        <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
-                    </form>
-                    <div class="booking-result"></div>
-                </div>
-            </div>
-
-            <div class="accommodation-item">
-                <img src="{{ url_for('static', filename='images/cabana1.jpeg') }}" alt="Cabana">
-                <div class="details">
-                    <h2>Cabana</h2>
-                    <ul>
-                        <li>Camas: 1 Casal</li>
-                    </ul>
-                    <div class="icons">
-                        <span>❄️</span>
-                        <span>📶</span>
-                        <span>📺</span>
-                        <span>🍷</span>
-                        <span>🍴</span>
-                    </div>
-                    <div class="price">A partir de <strong>R$290</strong></div>
-
-                    <form class="booking-form" onsubmit="return simulateBooking(event, 'Cabana', 590)">
-                        <label for="checkin">Check-in</label>
-                        <input type="date" id="checkin" name="checkin" required>
-
-                        <label for="checkout">Check-out</label>
-                        <input type="date" id="checkout" name="checkout" required>
-
-                        <label for="adults">Adultos</label>
-                        <select id="adults" name="adults" required>
-                            <option value="1">1 Adulto</option>
-                            <option value="2">2 Adultos</option>
-                            <option value="3">3 Adultos</option>
-                        </select>
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
 
                     <button type="submit" class="info-btn">Simular reserva</button>
                     <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
                 </form>
                 <div class="booking-result"></div>
-                {% endblock %}
+            </div>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="{{ url_for('static', filename='images/charrua.jpeg') }}" alt="Charrua (Bus)">
+            <div class="details">
+                <h2>Charrua (Bus)</h2>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$490</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                <form class="booking-form" onsubmit="return simulateBooking(event, 'Charrua', 'R$490')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
+                </form>
+                <div class="booking-result"></div>
+            </div>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="{{ url_for('static', filename='images/chale_familia.jpg') }}" alt="Chalé Família">
+            <div class="details">
+                <h2>Chalé Família</h2>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                    <li>Camas: 3 Solteiro</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$590</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                <form class="booking-form" onsubmit="return simulateBooking(event, 'Chalé Família', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
+                </form>
+                <div class="booking-result"></div>
+            </div>
+        </div>
+
+        <div class="accommodation-item">
+            <img src="{{ url_for('static', filename='images/cabana1.jpeg') }}" alt="Cabana">
+            <div class="details">
+                <h2>Cabana</h2>
+                <ul>
+                    <li>Camas: 1 Casal</li>
+                </ul>
+                <div class="icons">
+                    <span>❄️</span>
+                    <span>📶</span>
+                    <span>📺</span>
+                    <span>🍷</span>
+                    <span>🍴</span>
+                </div>
+                <div class="price">A partir de <strong>R$590</strong></div>
+                <button class="info-btn">Mais Informações</button>
+                <form class="booking-form" onsubmit="return simulateBooking(event, 'Cabana', 'R$590')">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+
+                    <label for="adults">Adultos</label>
+                    <select id="adults" name="adults" required>
+                        <option value="1">1 Adulto</option>
+                        <option value="2">2 Adultos</option>
+                        <option value="3">3 Adultos</option>
+                    </select>
+
+                    <button type="submit" class="info-btn">Simular reserva</button>
+                    <a href="{{ url_for('cadastro_reserva') }}" class="btn-control-panel">Cadastro de Reserva</a>
+                </form>
+                <div class="booking-result"></div>
             </div>
         </div>
     </section>
@@ -166,8 +175,34 @@
 
 <script>
     function simulateBooking(event, acomodacao, preco) {
-        // Código JavaScript já fornecido para simulação
-    }
+                event.preventDefault(); 
+            
+                const form = event.target;
+                const checkinDate = new Date(form.checkin.value);
+                const checkoutDate = new Date(form.checkout.value);
+                const adults = form.adults.value;
+            
+                if (isNaN(checkinDate) || isNaN(checkoutDate)) {
+                    alert("Por favor, selecione datas válidas.");
+                    return;
+                }
+            
+                const days = (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24);
+                if (days <= 0) {
+                    alert("A data de check-out deve ser após a data de check-in.");
+                    return;
+                }
+            
+                const dailyRate = parseFloat(preco.replace("R$", "").replace(",", ".")); 
+                const total = dailyRate * days;
+            
+                const resultDiv = form.nextElementSibling; 
+                resultDiv.innerHTML = `
+                    <h3>Simulação de Reserva para ${acomodacao}</h3>
+                    <p>Valor para ${days} dia(s) e ${adults} adulto(s): <strong>R$${total.toFixed(2)}</strong></p>
+                `;
+            }
 </script>
 </body>
 </html>
+{% endblock %}

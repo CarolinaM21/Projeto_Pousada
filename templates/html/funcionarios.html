@@ -10,23 +10,27 @@
 </head>
 <body>
 
-    <!-- Container Principal -->
     <div class="container">
-        <!-- Título da Página -->
+
+        {% extends "base.html" %}
+
+        {% block title %}Área do Funcionário{% endblock %}
+        
+        {% block content %}
+            
         <header class="header">
             <h1>Funcionários</h1>
             <button class="btn-add" onclick="adicionarFuncionario()"><i class="fas fa-plus"></i> Adicionar Funcionário</button>
         </header>
 
-        <!-- Tabela de Funcionários -->
         <table class="table">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Cargo</th>
-                    <th>Horário de Trabalho</th>
-                    <th>Status</th>
-                    <th>Ações</th>
+                    <th>Salário</th>
+                    <th>Data de Contratação</th>
+                    <th>Telefone</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,8 +38,10 @@
                 <tr>
                     <td>{{ funcionario.nome }}</td>
                     <td>{{ funcionario.cargo }}</td>
-                    <td>{{ funcionario.horario_trabalho }}</td>
-                    <td>{{ funcionario.status }}</td>
+                    <td>{{ funcionario.salario }}</td>
+                    <td>{{ funcionario.data_contratacao }}</td>
+                    <td>{{ funcionario.telefone }}</td>
+
                     <td>
                         <button class="btn-edit" onclick="editarFuncionario({{ funcionario.id_funcionario }})"><i class="fas fa-edit"></i></button>
                         <button class="btn-delete" onclick="excluirFuncionario({{ funcionario.id_funcionario }})"><i class="fas fa-trash"></i></button>
@@ -44,6 +50,8 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% endblock %}
+
     </div>
 
     <script src="{{ url_for('static', filename='js/funcionarios.js') }}"></script>

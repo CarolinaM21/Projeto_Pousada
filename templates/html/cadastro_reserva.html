@@ -15,7 +15,6 @@
     <div class="form-container">
         <h1>Cadastro de Reserva</h1>
         <form method="POST" action="/cadastro_reserva">
-            <!-- Seleção do Hóspede -->
             <label for="id_hospede">Selecione o Hóspede:</label>
             <select id="id_hospede" name="id_hospede" required>
                 <option value="" disabled selected>Selecione um hóspede</option>
@@ -24,7 +23,6 @@
                 {% endfor %}
             </select>
 
-            <!-- Acomodação -->
             <label for="id_acomodacao">Selecione a Acomodação:</label>
             <select id="id_acomodacao" name="id_acomodacao" required>
                 <option value="" disabled selected>Selecione uma acomodação</option>
@@ -33,18 +31,15 @@
                 {% endfor %}
             </select>
 
-            <!-- Datas -->
             <label for="data_checkin">Data de Check-in:</label>
             <input type="date" id="data_checkin" name="data_checkin" required>
 
             <label for="data_checkout">Data de Check-out:</label>
             <input type="date" id="data_checkout" name="data_checkout" required>
 
-            <!-- Valor Total -->
             <label for="valor_total">Valor Total:</label>
             <input type="text" id="valor_total" name="valor_total" readonly placeholder="Valor total da reserva">
 
-            <!-- Botão de Submissão -->
             <button type="submit">Salvar Reserva</button>
         </form>
     </div>

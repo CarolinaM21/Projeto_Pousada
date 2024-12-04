@@ -10,6 +10,13 @@
 </head>
 <body>
     <div class="container">
+
+        {% extends "base.html" %}
+
+        {% block title %}Área Financeira Funcionário{% endblock %}
+        
+        {% block content %}
+
         <div class="sidebar">
             <h2>Olá, Laura! </h2>
             <div class="info">
@@ -33,3 +40,4 @@
     </div>
 </body>
 </html>
+{% endblock %}

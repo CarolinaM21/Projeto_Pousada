@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import sqlite3
 import os
 from datetime import datetime
@@ -170,7 +170,6 @@ def cadastro_reserva():
     conn.close()
     return render_template('html/cadastro_reserva.html', hospedes=hospedes, acomodacoes=acomodacoes)
 
-
 @app.route('/funcionarios')
 def funcionarios():
     conn = get_db_connection()
@@ -180,22 +179,7 @@ def funcionarios():
 
 @app.route('/acomodacoes')
 def acomodacoes():
-    checkin = request.args.get('checkin') 
-    checkout = request.args.get('checkout')  
-    adults = request.args.get('adults')
-
-    app.logger.info(f"Parâmetros recebidos: checkin={checkin}, checkout={checkout}, adults={adults}")
-
-    if checkin and checkout:
-        try:
-            checkin_date = datetime.strptime(checkin, '%Y-%m-%d')
-            checkout_date = datetime.strptime(checkout, '%Y-%m-%d')
-            days = (checkout_date - checkin_date).days
-            app.logger.info(f"Acomodações para {days} dias entre {checkin_date} e {checkout_date}")
-        except ValueError:
-            app.logger.error("Erro ao processar as datas.")
-    
-    return render_template('html/acomodacoes.html', checkin=checkin, checkout=checkout, adults=adults)
+    return render_template('html/acomodacoes.html')
 
 @app.route('/add')
 def add():
